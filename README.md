@@ -1,6 +1,6 @@
 # Croque carotte
 
-## This is a studying project for the 1st semester
+## This is a school project for the 1st semester
 
 
 ### Tasks
