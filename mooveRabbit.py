@@ -17,8 +17,8 @@ def mooveRabbitOnBoard(Posrabbit, board, valeur):
     
 
 tab = [0 for i in range(24)]
-tab[1] = "RV"
-tab[4] = "RB"
+tab[1] = "1"
+tab[4] = "2"
 print (tab)
 tab[7] = 3
 

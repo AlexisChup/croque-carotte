@@ -3,6 +3,7 @@
 # of the game
 
 import random
+import mooveRabbit
 
 NUMBER_OF_CELL = 24
 
