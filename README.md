@@ -3,6 +3,9 @@
 ## This is a studying project for the 1st semester
 
 
-| Nom       | To Do         | Done          |
+### Tasks
+
+|           | To Do         | Done          |
 | --------- | ------------- | ------------- |
-|           |               |               |
+| Alexis    |               |               |
+| Tristan   |               |               |
