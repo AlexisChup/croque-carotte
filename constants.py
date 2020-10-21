@@ -1,0 +1,13 @@
+NUMBER_OF_CELL = 24
+
+FREE_PLACE =        0
+RABBIT_PLAYER_1 =   1
+RABBIT_PLAYER_2 =   2
+HOLE =              3
+
+SYMBOL_CELL = {
+    FREE_PLACE: "_",
+    RABBIT_PLAYER_1: "R1",
+    RABBIT_PLAYER_2: "R2",
+    HOLE: "O"
+}
