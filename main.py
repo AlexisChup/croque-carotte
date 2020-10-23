@@ -22,14 +22,17 @@ if __name__ == "__main__":
         answer = input()
         isPlaying = False if (answer == 'q') else True
 
-        # BOARD
+        # CARD
         displayBoard()
         currentCard = getCard()
         displayValueOfCard(currentCard)
 
         # MOOVE RABBIT
-        keyOfRabbit = chooseRabbitToMoove(currentPlayer)
-        mooveRabbitOnBoard(keyOfRabbit, 1, currentPlayer)
+        if(currentCard != MOVING_CARROT):
+            keyOfRabbit = chooseRabbitToMoove(currentPlayer)
+            mooveRabbitOnBoard(keyOfRabbit, currentCard, currentPlayer)
+        else:
+            insertRandomHole()
         displayBoard()
 
         currentPlayer = (currentPlayer + 1) % 2
