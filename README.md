@@ -6,7 +6,7 @@
 ### Tasks
 
 TODO:
-- Deck de cartes
+x Deck de cartes
 - Déplacement des lapins
 - Gestions des lapins
 - Création du menu pour saisir les actions
