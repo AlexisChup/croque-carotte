@@ -4,23 +4,12 @@
 
 import random
 from constants import *
-
-listOfCards = []
-
-def initListOfCards():
-    for index in range(NUMBER_OF_CARDS):
-        # Cards are define between 1 and 4 (see constants.py)
-        card = (index%4) + 1
-        listOfCards.append(card)
-
-def shuffleListOfCards():
-    random.shuffle(listOfCards)
         
 
 def initBoard():
-    board = [0 for i in range (NUMBER_OF_CELL)]
+    return [0 for i in range (NUMBER_OF_CELL)]
 
-board = [0 for i in range (NUMBER_OF_CELL)]
+board = initBoard()
 
 
 def displayBoard():
@@ -50,4 +39,3 @@ def insertRandomHole():
     for hole in range(numberOfHoles):
         positionOfHole = returnRandomPositionOfHole()
         board[positionOfHole] = HOLE
-

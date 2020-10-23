@@ -13,6 +13,7 @@ SYMBOL_CELL = {
     HOLE: "O"
 }
 
+ERROR = -1
 MOVING_1 =      1
 MOVING_2 =      2
 MOVING_3 =      3

@@ -1,6 +1,7 @@
-from board import*
+from board import *
 from constants import *
-from mooveRabbit import*
+from handleRabbit import *
+from cards import *
 
 
 
@@ -12,3 +13,4 @@ if __name__ == "__main__":
     insertRandomHole()
     mooveRabbitOnBoard(1, 4)
     displayBoard()
+    print("fghyujikhuio",getCard())

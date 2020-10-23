@@ -8,6 +8,7 @@
 TODO:
 - Deck de cartes
 - Déplacement des lapins
+- Gestions des lapins
 - Création du menu pour saisir les actions
 - Détection de fin de partie
 - Affichage simple de toutes les infos
