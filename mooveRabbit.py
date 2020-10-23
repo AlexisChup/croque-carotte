@@ -1,8 +1,7 @@
 
+from board import*
 
-
-
-def mooveRabbitOnBoard(Posrabbit, board, valeur):
+def mooveRabbitOnBoard(Posrabbit, valeur):
     if board[Posrabbit+valeur] == 0:
         board[Posrabbit+valeur] = board[Posrabbit]
         board[Posrabbit] = 0
@@ -11,16 +10,7 @@ def mooveRabbitOnBoard(Posrabbit, board, valeur):
         board[Posrabbit] = 0
 
     else:
-        mooveRabbitOnBoard(Posrabbit, board, valeur+1)
+        mooveRabbitOnBoard(Posrabbit, valeur+1)
 
     return board
     
-
-tab = [0 for i in range(24)]
-tab[1] = "1"
-tab[4] = "2"
-print (tab)
-tab[7] = 3
-
-mooveRabbitOnBoard(4, tab, 3)
-print(tab)
