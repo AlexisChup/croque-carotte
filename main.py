@@ -8,30 +8,29 @@ from display import *
 
 
 if __name__ == "__main__":
+    isPlaying = True
+    currentPlayer = PLAYER_1
+    currentCard = MOVING_CARROT
 
-    displayBoard()
-    mooveRabbitOnBoard(1, 24, 2)       
-    
-    # displayMenu()
-    # displayOptions()
+    while(isPlaying):
+        # MENU & CURRENT PLAYER
+        displayMenu()
+        displayCurrentPlayer(currentPlayer)
 
-    # answer = input()
-    # isPlaying = False if (answer == 'q') else True
+        # IS PLAYING AGAIN
+        displayOptions()
+        answer = input()
+        isPlaying = False if (answer == 'q') else True
 
-    # currentPlayer = PLAYER_1
-    # currentCard = MOVING_CARROT
+        # BOARD
+        displayBoard()
+        currentCard = getCard()
+        displayValueOfCard(currentCard)
 
-    # while(isPlaying):
-    #     displayBoard()
-    #     displayMenu()
-    #     displayCurrentPlayer(currentPlayer)
+        # MOOVE RABBIT
+        keyOfRabbit = chooseRabbitToMoove(currentPlayer)
+        mooveRabbitOnBoard(keyOfRabbit, 1, currentPlayer)
+        displayBoard()
 
-    #     displayOptions()
-    #     answer = input()
-    #     isPlaying = False if (answer == 'q') else True
-
-    #     currentCard = getCard()
-    #     displayValueOfCard(currentCard)
-
-    #     currentPlayer = (currentPlayer + 1) % 2
+        currentPlayer = (currentPlayer + 1) % 2
         

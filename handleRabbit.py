@@ -2,54 +2,59 @@
 from board import*
 
 dictionnaryRabbitPLayer1 = {
-    "rabbit_1": BEGIN,
-    "rabbit_2" : BEGIN , 
-    "rabbit_3": BEGIN , 
-    "rabbit_4": BEGIN 
+    "TriTri": BEGIN,
+    "Tropical" : BEGIN , 
+    "Topinembourg": BEGIN , 
+    "Tyty": BEGIN 
 }
 dictionnaryRabbitPLayer2 = {
-    "rabbit_1": BEGIN,
-    "rabbit_2" : BEGIN, 
-    "rabbit_3": BEGIN, 
-    "rabbit_4": BEGIN 
+    "Zebre": BEGIN,
+    "Zebron" : BEGIN, 
+    "Zebru": BEGIN, 
+    "Zimbabwa": BEGIN 
 }
 
-def mooveRabbitOnBoard(nameOfRabbit, valeur, player):
+def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     dictionnary = chooseGoodDictionnary(player)
-    posRabbit = findPosRabbit(nameOfRabbit, player)
+    posRabbit = findPosRabbit(keyOfRabbit, player)
     name = findNameRabbit(player)
 
     if board[posRabbit+valeur] == FREE_PLACE:
         board[posRabbit+valeur] = name
-        dictionnary[nameOfRabbit] = dictionnary[nameOfRabbit] + valeur
+        dictionnary[keyOfRabbit] += valeur
         board[posRabbit] = FREE_PLACE
 
     elif board[posRabbit+valeur] == HOLE:
         board[posRabbit] = FREE_PLACE
+        dictionnary[keyOfRabbit] = FALLEN
 
     else:
-        mooveRabbitOnBoard(posRabbit, valeur+1)
+        mooveRabbitOnBoard(keyOfRabbit, valeur+1, player)
 
     return board
     
 
 
-def chooseRabbitToMoove():
-    nombreToFindRabbit = int(input("entrez le nom du lapin que vous voulez avancer"))
-    if nombreToFindRabbit == 1:
-        return "rabbit_1"
-    elif nombreToFindRabbit == 2:
-        return "rabbit_2"
-    elif nombreToFindRabbit == 3:
-        return "rabbit_3"
-    elif nombreToFindRabbit == 4:
-        return "rabbit_4"
+def chooseRabbitToMoove(player):
+    dictionnaryRabbit = chooseGoodDictionnary(player)
+    index = 1
+    listKeys = []
+
+    for key in dictionnaryRabbit:
+        if(dictionnaryRabbit[key] != FALLEN):
+            listKeys.append(key)
+
+    for key, value in dictionnaryRabbit.items():
+        if(value != FALLEN):
+            print(index, ": pour ", key)
+            index += 1
+
+    index = int(input("Saisir le numéro du lapin à avancer :\n*")) - 1
+
+    return listKeys[index]
 
 def chooseGoodDictionnary(player):
-    if player == PLAYER_1:
-        return dictionnaryRabbitPLayer1
-    else:
-        return dictionnaryRabbitPLayer2
+    return dictionnaryRabbitPLayer1 if(player == PLAYER_1) else dictionnaryRabbitPLayer2
 
 def findNameRabbit(player):
     dic = chooseGoodDictionnary(player)
@@ -58,9 +63,7 @@ def findNameRabbit(player):
     else:
         return RABBIT_PLAYER_2
 
-def findPosRabbit(nameOfRabbit, player):
-    dic = chooseGoodDictionnary(player)
-    if player == PLAYER_1:
-        return dictionnaryRabbitPLayer1[nameOfRabbit]
-    else:
-        return dictionnaryRabbitPLayer2[nameOfRabbit]
+def findPosRabbit(keyOfRabbit, player):
+    dictionary = chooseGoodDictionnary(player)
+
+    return dictionary[keyOfRabbit]

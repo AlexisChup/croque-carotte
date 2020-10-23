@@ -1,12 +1,12 @@
 NUMBER_OF_CELL =    24
 NUMBER_OF_CARDS =   24
 
+FALLEN =            -2
 BEGIN =             -1
 FREE_PLACE =        0
 RABBIT_PLAYER_1 =   1
 RABBIT_PLAYER_2 =   2
 HOLE =              3
-FALLEN =            4
 
 
 SYMBOL_CELL = {
