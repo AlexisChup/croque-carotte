@@ -19,14 +19,22 @@ def displayOptions():
     print("\t1 : Tirer une carte")
     print("\tq : Quitter")
 
-# TODO: Select in dictionary only left rabbit
-# def displayOptionsRabbit():
-
 def displayValueOfCard(card):
     print("Carte tirée : ", DICO_DISPLAY_CARD[card])
 
 def displayBoard():
-    for cell in board:
-        print(SYMBOL_CELL[cell], end=' | ',)
+    displayVerticalLineBoard()
+    displayBoardCell()
+    displayVerticalLineBoard()
 
+def displayVerticalLineBoard():
+    print("▬"*len(board)*3, end='',)
     print("")
+
+def displayBoardCell():
+    for cell in board:
+        print(SYMBOL_CELL[cell], end='│ ',)
+    print("")
+
+def displayCurrentPlayer(player):
+    print(DICO_PLAYER_NAME[player], " À toi de jouer !")

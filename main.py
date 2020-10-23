@@ -14,13 +14,20 @@ if __name__ == "__main__":
     answer = input()
     isPlaying = False if (answer == 'q') else True
 
+    currentPlayer = 0
+    currentCard = MOVING_CARROT
+
     while(isPlaying):
         displayBoard()
         displayMenu()
-        displayOptions()
+        displayCurrentPlayer(currentPlayer)
 
+        displayOptions()
         answer = input()
         isPlaying = False if (answer == 'q') else True
 
-        displayValueOfCard(getCard())
-    
+        currentCard = getCard()
+        displayValueOfCard(currentCard)
+
+        currentPlayer = (currentPlayer + 1) % 2
+        

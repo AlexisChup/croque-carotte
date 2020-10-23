@@ -7,7 +7,7 @@ RABBIT_PLAYER_2 =   2
 HOLE =              3
 
 SYMBOL_CELL = {
-    FREE_PLACE:         "_",
+    FREE_PLACE:         " ",
     RABBIT_PLAYER_1:    "R1",
     RABBIT_PLAYER_2:    "R2",
     HOLE:               "O"
@@ -27,3 +27,11 @@ DICO_DISPLAY_CARD = {
 }
 
 ORIGINAL_LIST_CARDS = []
+
+PLAYER_1 = 0
+PLAYER_2 = 1
+
+DICO_PLAYER_NAME = {
+    PLAYER_1: "Joueur 1",
+    PLAYER_2: "Joueur 2"
+}
