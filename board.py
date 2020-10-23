@@ -22,10 +22,16 @@ def returnRandomPositionOfHole():
         
     return positionOfHole
 
+def removeOlderHoles():
+    for index in range(len(board)):
+        if(board[index] == HOLE):
+            board[index] = FREE_PLACE
+
 
 def insertRandomHole():
+    removeOlderHoles()
     numberOfHoles = random.randint(1, 3)
-    
+
     for hole in range(numberOfHoles):
         positionOfHole = returnRandomPositionOfHole()
         board[positionOfHole] = HOLE
