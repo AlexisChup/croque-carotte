@@ -8,17 +8,11 @@ from display import *
 
 
 if __name__ == "__main__":
-    displayMenu()
-    displayOptions()
-
-    answer = input()
-    isPlaying = False if (answer == 'q') else True
-
+    isPlaying = True
     currentPlayer = PLAYER_1
     currentCard = MOVING_CARROT
 
     while(isPlaying):
-        displayBoard()
         displayMenu()
         displayCurrentPlayer(currentPlayer)
 
@@ -26,6 +20,7 @@ if __name__ == "__main__":
         answer = input()
         isPlaying = False if (answer == 'q') else True
 
+        displayBoard()
         currentCard = getCard()
         displayValueOfCard(currentCard)
 
