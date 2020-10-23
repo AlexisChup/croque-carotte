@@ -8,16 +8,13 @@ from display import *
 
 
 if __name__ == "__main__":
+    displayMenu()
+    displayOptions()
 
-    # displayBoard()
-    # insertRandomHole()
-    # rabbit = chooseRabbitToMoove()
-    # mooveRabbitOnBoard(rabbit, 1, 1)
-    # displayBoard()
-    # mooveRabbitOnBoard(rabbit, 1, 1)
-    # displayBoard()
+    answer = input()
+    isPlaying = False if (answer == 'q') else True
 
-    currentPlayer = 0
+    currentPlayer = PLAYER_1
     currentCard = MOVING_CARROT
 
     while(isPlaying):
