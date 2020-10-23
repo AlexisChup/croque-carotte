@@ -7,7 +7,7 @@
 
 TODO:
 - Deck de cartes
-- Déplacement des lapins
+- Déplacement des lapins                    DONE
 - Création du menu pour saisir les actions
 - Détection de fin de partie
 - Affichage simple de toutes les infos
