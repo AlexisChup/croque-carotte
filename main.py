@@ -33,6 +33,8 @@ if __name__ == "__main__":
             mooveRabbitOnBoard(keyOfRabbit, currentCard, currentPlayer)
         else:
             insertRandomHole()
+
+        # BOARD
         displayBoard()
 
         currentPlayer = (currentPlayer + 1) % 2

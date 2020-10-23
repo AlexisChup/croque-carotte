@@ -8,6 +8,7 @@
 TODO:
 - [X] Deck de cartes
 - [X] Déplacement des lapins
+- [ ] Quand on ajoute des troues, si lapin, on le tue
 - [ ] Gestions des lapins
 - [ ] Création du menu pour saisir les actions
 - [ ] Détection de fin de partie

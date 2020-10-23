@@ -16,7 +16,7 @@ def displayHoritonzaleLine():
 
 def displayOptions():
     print("Entrez un caractère : ")
-    print("\t1 : Tirer une carte")
+    print("\tEntrer : Tirer une carte")
     print("\tq : Quitter")
 
 def displayValueOfCard(card):
@@ -34,6 +34,7 @@ def displayVerticalLineBoard():
 def displayBoardCell():
     for cell in board:
         print(SYMBOL_CELL[cell], end='│ ',)
+
     print("")
 
 def displayCurrentPlayer(player):
