@@ -8,22 +8,16 @@ dictionnaryRabbitPLayer1 = {
     "rabbit_4": BEGIN 
 }
 dictionnaryRabbitPLayer2 = {
-    "rabbit_2": BEGIN,
+    "rabbit_1": BEGIN,
     "rabbit_2" : BEGIN, 
     "rabbit_3": BEGIN, 
     "rabbit_4": BEGIN 
 }
 
 def mooveRabbitOnBoard(nameOfRabbit, valeur, player):
-    if player == PLAYER_1:
-        posRabbit = dictionnaryRabbitPLayer1[nameOfRabbit]
-        dictionnary = dictionnaryRabbitPLayer1
-        name = RABBIT_PLAYER_1
-
-    else:
-        posRabbit = dictionnaryRabbitPLayer2[nameOfRabbit]
-        dictionnary = dictionnaryRabbitPLayer2
-        name = RABBIT_PLAYER_2
+    dictionnary = chooseGoodDictionnary(player)
+    posRabbit = findPosRabbit(nameOfRabbit, player)
+    name = findNameRabbit(player)
 
     if board[posRabbit+valeur] == FREE_PLACE:
         board[posRabbit+valeur] = name
@@ -40,12 +34,33 @@ def mooveRabbitOnBoard(nameOfRabbit, valeur, player):
     
 
 
-def ChooseRabbitToMoove():
-    nameOfRabbit = input("entrez le nom du lapin que vous voulez avancer")
-    return nameOfRabbit
+def chooseRabbitToMoove():
+    nombreToFindRabbit = int(input("entrez le nom du lapin que vous voulez avancer"))
+    if nombreToFindRabbit == 1:
+        return "rabbit_1"
+    elif nombreToFindRabbit == 2:
+        return "rabbit_2"
+    elif nombreToFindRabbit == 3:
+        return "rabbit_3"
+    elif nombreToFindRabbit == 4:
+        return "rabbit_4"
 
 def chooseGoodDictionnary(player):
     if player == PLAYER_1:
         return dictionnaryRabbitPLayer1
     else:
         return dictionnaryRabbitPLayer2
+
+def findNameRabbit(player):
+    dic = chooseGoodDictionnary(player)
+    if player == PLAYER_1:
+        return RABBIT_PLAYER_1
+    else:
+        return RABBIT_PLAYER_2
+
+def findPosRabbit(nameOfRabbit, player):
+    dic = chooseGoodDictionnary(player)
+    if player == PLAYER_1:
+        return dictionnaryRabbitPLayer1[nameOfRabbit]
+    else:
+        return dictionnaryRabbitPLayer2[nameOfRabbit]
