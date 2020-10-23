@@ -12,6 +12,7 @@ TODO:
 - Détection de fin de partie
 - Affichage simple de toutes les infos
 - Gestions des erreurs (try/catch)
+- Refacto
 
 
 |           | To Do         | Done          |
