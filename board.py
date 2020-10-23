@@ -20,9 +20,10 @@ def shuffleListOfCards():
 def initBoard():
     board = [0 for i in range (NUMBER_OF_CELL)]
 
-    return board
+board = [0 for i in range (NUMBER_OF_CELL)]
 
-def displayBoard(board):
+
+def displayBoard():
     print("")
     print("    CROQUE CAROTTE   ".center(50, "-"))
     print("")
@@ -32,7 +33,7 @@ def displayBoard(board):
 
     print("")
 
-def returnRandomPositionOfHole(board):
+def returnRandomPositionOfHole():
     isPositionFound = False
 
     while(not isPositionFound):
@@ -44,10 +45,9 @@ def returnRandomPositionOfHole(board):
     return positionOfHole
 
 
-def insertRandomHole(board):
+def insertRandomHole():
     numberOfHoles = random.randint(1, 3)
     for hole in range(numberOfHoles):
-        positionOfHole = returnRandomPositionOfHole(board)
+        positionOfHole = returnRandomPositionOfHole()
         board[positionOfHole] = HOLE
 
-if __name__ == "__main__":
