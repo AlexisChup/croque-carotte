@@ -25,6 +25,7 @@ def returnRandomPositionOfHole():
 
 def insertRandomHole():
     numberOfHoles = random.randint(1, 3)
+    
     for hole in range(numberOfHoles):
         positionOfHole = returnRandomPositionOfHole()
         board[positionOfHole] = HOLE

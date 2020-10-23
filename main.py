@@ -9,32 +9,28 @@ from display import *
 
 if __name__ == "__main__":
 
-    displayBoard()
-    insertRandomHole()
-    rabbit = chooseRabbitToMoove()
-    mooveRabbitOnBoard(rabbit, 1, 1)
-    displayBoard()
-    mooveRabbitOnBoard(rabbit, 1, 1)
-    displayBoard()
+    # displayBoard()
+    # insertRandomHole()
+    # rabbit = chooseRabbitToMoove()
+    # mooveRabbitOnBoard(rabbit, 1, 1)
+    # displayBoard()
+    # mooveRabbitOnBoard(rabbit, 1, 1)
+    # displayBoard()
 
+    currentPlayer = 0
+    currentCard = MOVING_CARROT
 
+    while(isPlaying):
+        displayBoard()
+        displayMenu()
+        displayCurrentPlayer(currentPlayer)
 
+        displayOptions()
+        answer = input()
+        isPlaying = False if (answer == 'q') else True
 
-    
-    # displayMenu()
-    # displayOptions()
+        currentCard = getCard()
+        displayValueOfCard(currentCard)
 
-
-    # answer = input()
-    # isPlaying = False if (answer == 'q') else True
-
-    # while(isPlaying):
-    #     displayBoard()
-    #     displayMenu()
-    #     displayOptions()
-
-    #     answer = input()
-    #     isPlaying = False if (answer == 'q') else True
-
-    #     displayValueOfCard(getCard())
-    
+        currentPlayer = (currentPlayer + 1) % 2
+        
