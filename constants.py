@@ -7,16 +7,23 @@ RABBIT_PLAYER_2 =   2
 HOLE =              3
 
 SYMBOL_CELL = {
-    FREE_PLACE: "_",
-    RABBIT_PLAYER_1: "R1",
-    RABBIT_PLAYER_2: "R2",
-    HOLE: "O"
+    FREE_PLACE:         "_",
+    RABBIT_PLAYER_1:    "R1",
+    RABBIT_PLAYER_2:    "R2",
+    HOLE:               "O"
 }
 
-ERROR = -1
+ERROR =         -2
 MOVING_1 =      1
 MOVING_2 =      2
 MOVING_3 =      3
 MOVING_CARROT = 4
+
+DICO_DISPLAY_CARD = {
+    MOVING_1: "Avancez de 1 case",
+    MOVING_2: "Avancez de 2 cases",
+    MOVING_3: "Avancez de 3 cases",
+    MOVING_CARROT: "Tournez la carotte"
+}
 
 ORIGINAL_LIST_CARDS = []

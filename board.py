@@ -11,17 +11,6 @@ def initBoard():
 
 board = initBoard()
 
-
-def displayBoard():
-    print("")
-    print("    CROQUE CAROTTE   ".center(50, "-"))
-    print("")
-
-    for cell in board:
-        print(SYMBOL_CELL[cell], end=' | ',)
-
-    print("")
-
 def returnRandomPositionOfHole():
     isPositionFound = False
 
