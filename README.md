@@ -12,10 +12,10 @@ TODO:
 - [X] Afficher les numéros des cases en dessous
 - [X] Détection de fin de partie
 - [X] Afficher le nom des lapins
-- [X] insertRandomHole -> if rabbit -> le butter -> A
+- [X] insertRandomHole -> if rabbit -> le butter
+- [X] Gestions des erreurs (try/catch) -> A
 - [ ] Reculer les lapins quand ils touchent la carotte (trop de cases)
 - [ ] Gérer le cas où tous les lapins sont morts
-- [ ] Gestions des erreurs (try/catch) -> A
 - [ ] Affichage simple de toutes les infos
 
 
