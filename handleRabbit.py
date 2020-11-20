@@ -49,7 +49,7 @@ def chooseRabbitToMoove(player):
             print(index, ": pour ", key)
             index += 1
 
-    index = int(input("Saisir le numéro du lapin à avancer :\n*")) - 1
+    index = int(input("Saisir le numéro du lapin à avancer : ")) - 1
 
     return listKeys[index]
 

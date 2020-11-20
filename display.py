@@ -37,6 +37,7 @@ def displayBoardCell():
         #     print(SYMBOL_CELL[cell], end='│ ',)
 
         print(SYMBOL_CELL[cell], end='│ ',)
+
     print("")
 
 def displayCaseNumer():
