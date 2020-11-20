@@ -10,13 +10,12 @@ def displayMenu():
     print("    CROQUE-CAROTTE MENU    ".center(60, '~'))
     displayHoritonzaleLine()
 
-
 def displayHoritonzaleLine():
     print("".center(60, "-"))
 
 def displayOptions():
     print("Entrez un caractère : ")
-    print("\t1 : Tirer une carte")
+    print("\tEntrer : Tirer une carte")
     print("\tq : Quitter")
 
 def displayValueOfCard(card):
@@ -26,14 +25,24 @@ def displayBoard():
     displayVerticalLineBoard()
     displayBoardCell()
     displayVerticalLineBoard()
+    displayCaseNumer()
 
 def displayVerticalLineBoard():
-    print("▬"*len(board)*3, end='',)
+    print("▬"*NUMBER_OF_CELL*3, end='',)
     print("")
 
 def displayBoardCell():
     for cell in board:
+        # if board == RABBIT_PLAYER_1
+        #     print(SYMBOL_CELL[cell], end='│ ',)
+
         print(SYMBOL_CELL[cell], end='│ ',)
+    print("")
+
+def displayCaseNumer():
+    for num in range(NUMBER_OF_CELL):
+        print(str(num).zfill(2), end="│")
+    
     print("")
 
 def displayCurrentPlayer(player):

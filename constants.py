@@ -11,8 +11,8 @@ HOLE =              3
 
 SYMBOL_CELL = {
     FREE_PLACE:         " ",
-    RABBIT_PLAYER_1:    "R1",
     RABBIT_PLAYER_2:    "R2",
+    RABBIT_PLAYER_1:    "R1",
     HOLE:               "O"
 }
 

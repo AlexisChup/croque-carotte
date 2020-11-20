@@ -12,6 +12,8 @@ if __name__ == "__main__":
     currentPlayer = PLAYER_1
     currentCard = MOVING_CARROT
 
+    insertRandomHole()
+
     while(isPlaying):
         # MENU & CURRENT PLAYER
         displayMenu()
