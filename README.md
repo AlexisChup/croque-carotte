@@ -16,10 +16,8 @@ TODO:
 - [X] Gestions des erreurs dans les inputs (try/catch)
 - [ ] Reculer les lapins quand ils touchent la carotte (trop de cases) -> T
 - [ ] Gérer le cas où tous les lapins sont morts -> A
-- [ ] Affichage simple de toutes les infos
 
-
-- [ ] Meilleur affichage des noms des lapins
-- [ ] Gestions des lapins
+- [ ] Sauvegarde
+- [ ] Meilleur affichage des noms des lapins (couleurs)
 - [ ] Création du menu pour saisir les actions
 - [ ] Refacto
