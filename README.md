@@ -13,9 +13,9 @@ TODO:
 - [X] Détection de fin de partie
 - [X] Afficher le nom des lapins
 - [X] insertRandomHole -> if rabbit -> le butter
-- [X] Gestions des erreurs (try/catch) -> A
-- [ ] Reculer les lapins quand ils touchent la carotte (trop de cases)
-- [ ] Gérer le cas où tous les lapins sont morts
+- [X] Gestions des erreurs dans les inputs (try/catch)
+- [ ] Reculer les lapins quand ils touchent la carotte (trop de cases) -> T
+- [ ] Gérer le cas où tous les lapins sont morts -> A
 - [ ] Affichage simple de toutes les infos
 
 
