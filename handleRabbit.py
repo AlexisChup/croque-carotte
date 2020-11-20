@@ -4,27 +4,16 @@ from constants import *
 from display import displayWinner
 from utils import handleInputRabbitNumero
 
-dictionnaryRabbitPLayer1 = {
-    "A1": BEGIN,
-    "B1" : BEGIN , 
-    "C1": BEGIN , 
-    "D1": BEGIN 
-}
-dictionnaryRabbitPLayer2 = {
-    "A2": BEGIN,
-    "B2" : BEGIN, 
-    "C2": BEGIN, 
-    "D2": BEGIN 
-}
-
 def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     dictionnary = chooseGoodDictionnary(player)
     posRabbit = findPosRabbit(keyOfRabbit, player)
     name = findNameRabbit(player)
 
+    # À changer par la suite
     if(posRabbit+valeur >= WIN_CELL):
         displayWinner(player)
         board[posRabbit] = FREE_PLACE
+        dictionnary[keyOfRabbit] = WIN_CELL
         board[WIN_CELL] = name
 
         return IS_STOP_PLAYING

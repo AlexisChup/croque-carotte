@@ -5,6 +5,18 @@
 import random
 from constants import *
         
+dictionnaryRabbitPLayer1 = {
+    "A1": BEGIN,
+    "B1" : BEGIN , 
+    "C1": BEGIN , 
+    "D1": BEGIN 
+}
+dictionnaryRabbitPLayer2 = {
+    "A2": BEGIN,
+    "B2" : BEGIN, 
+    "C2": BEGIN, 
+    "D2": BEGIN 
+}
 
 def initBoard():
     return [0 for i in range (NUMBER_OF_CELL)]

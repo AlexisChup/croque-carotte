@@ -2,7 +2,6 @@ import os
 
 from constants import *
 from board import *
-from handleRabbit import*
 
 def displayMenu():
     # os.system("clear")
@@ -33,20 +32,23 @@ def displayHorizontalLineBoard():
     print("")
 
 def displayBoardCell():
-    for case in range(len(board)):
-        listeRabbit =  []
-        if board[case] == 1:
+    for cell in range(NUMBER_OF_CELL):
+        if board[cell] == RABBIT_PLAYER_1:
             for key in dictionnaryRabbitPLayer1:
-                if case == dictionnaryRabbitPLayer1[key]:
-                    print(key, end='│ ')
-        if board[case] == 2:
+                if cell == dictionnaryRabbitPLayer1[key]:
+                    print(key, end='│  ')
+
+        elif board[cell] == RABBIT_PLAYER_2:
             for key in dictionnaryRabbitPLayer2:
-                if case == dictionnaryRabbitPLayer2[key]:
-                    print(key, end='│ ')
-        elif board[case] == 3:
-            print("0", end='│ ')
+                if cell == dictionnaryRabbitPLayer2[key]:
+                    print(key, end='│  ')
+
+        elif board[cell] == HOLE:
+            print(".0", end='│  ')
+
         else :
-            print(" ", end='│ ')
+            print(" ", end='│  ')
+
     print("")
 
 def displayCaseNumer():
