@@ -43,7 +43,14 @@ def removeOlderHoles():
 def insertRandomHole():
     removeOlderHoles()
     numberOfHoles = random.randint(1, 3)
+    listPositionOfFuturFallenRabbit = []
 
     for hole in range(numberOfHoles):
         positionOfHole = returnRandomPositionOfHole()
+
+        if(board[positionOfHole] != FREE_PLACE):
+            listPositionOfFuturFallenRabbit.append(positionOfHole)
+
         board[positionOfHole] = HOLE
+
+    return listPositionOfFuturFallenRabbit

@@ -66,3 +66,12 @@ def findPosRabbit(keyOfRabbit, player):
     dictionary = chooseGoodDictionnary(player)
 
     return dictionary[keyOfRabbit]
+
+def makeRabbitFallen(listPositionOfFuturFallenRabbit):
+    for position in listPositionOfFuturFallenRabbit:
+        for key in dictionnaryRabbitPLayer1:
+            if(dictionnaryRabbitPLayer1[key] == position):
+                dictionnaryRabbitPLayer1[key] = FALLEN
+        for key in dictionnaryRabbitPLayer2:
+            if(dictionnaryRabbitPLayer2[key] == position):
+                dictionnaryRabbitPLayer2[key] = FALLEN
