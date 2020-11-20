@@ -3,9 +3,8 @@ from constants import *
 from handleRabbit import *
 from cards import *
 from display import *
-
-
-
+from utils import handleInputPlayerAction
+from handlePlayers import returnNextPlayer
 
 if __name__ == "__main__":
     isPlaying = True
@@ -20,9 +19,8 @@ if __name__ == "__main__":
         displayCurrentPlayer(currentPlayer)
 
         # IS PLAYING AGAIN
-        displayOptions()
-        answer = input()
-        isPlaying = False if (answer == 'q') else True
+        displayPlayerAction()
+        isPlaying = handleInputPlayerAction()
 
         # CARD
         displayBoard()
@@ -39,5 +37,5 @@ if __name__ == "__main__":
         # BOARD
         displayBoard()
 
-        currentPlayer = (currentPlayer + 1) % 2
+        currentPlayer = returnNextPlayer(currentPlayer, NUMBER_OF_PLAYERS)
         

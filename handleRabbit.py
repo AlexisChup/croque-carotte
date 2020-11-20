@@ -2,6 +2,7 @@
 from board import*
 from constants import *
 from display import displayWinner
+from utils import handleInputRabbitNumero
 
 dictionnaryRabbitPLayer1 = {
     "TriTri": BEGIN,
@@ -20,7 +21,6 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     dictionnary = chooseGoodDictionnary(player)
     posRabbit = findPosRabbit(keyOfRabbit, player)
     name = findNameRabbit(player)
-    print("new pos : ", posRabbit+valeur)
 
     if(posRabbit+valeur >= WIN_CELL):
         displayWinner(player)
@@ -43,8 +43,6 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
 
     return IS_CONTINUING_PLAYING
     
-
-
 def chooseRabbitToMoove(player):
     dictionnaryRabbit = chooseGoodDictionnary(player)
     index = 1
@@ -54,12 +52,13 @@ def chooseRabbitToMoove(player):
         if(dictionnaryRabbit[key] != FALLEN):
             listKeys.append(key)
 
+    print("Pressez [ENTER] pour choisir :", listKeys[0])
     for key, value in dictionnaryRabbit.items():
         if(value != FALLEN):
             print(index, ": pour ", key)
             index += 1
 
-    index = int(input("Saisir le numéro du lapin à avancer : ")) - 1
+    index = handleInputRabbitNumero(len(listKeys))
     print("\n")
 
     return listKeys[index]

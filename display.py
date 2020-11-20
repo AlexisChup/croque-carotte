@@ -7,27 +7,27 @@ def displayMenu():
     # os.system("clear")
 
     displayHoritonzaleLine()
-    print("    CROQUE-CAROTTE MENU    ".center(60, '~'))
+    print("         CROQUE-CAROTTE MENU         ".center(60, '█'))
     displayHoritonzaleLine()
 
 def displayHoritonzaleLine():
-    print("".center(60, "-"))
+    print("".center(60, "▬"))
 
-def displayOptions():
+def displayPlayerAction():
     print("Entrez un caractère : ")
-    print("\tEntrer : Tirer une carte")
     print("\tq : Quitter")
+    print("\tAutre : Tirer une carte")
 
 def displayValueOfCard(card):
     print("\nCARTE TIRÉE : ", DICO_DISPLAY_CARD[card], "\n")
 
 def displayBoard():
-    displayVerticalLineBoard()
+    displayHorizontalLineBoard()
     displayBoardCell()
-    displayVerticalLineBoard()
+    displayHorizontalLineBoard()
     displayCaseNumer()
 
-def displayVerticalLineBoard():
+def displayHorizontalLineBoard():
     print("▬"*NUMBER_OF_CELL*4, end='',)
     print("")
 
