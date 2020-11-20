@@ -2,16 +2,16 @@
 from board import*
 
 dictionnaryRabbitPLayer1 = {
-    "TriTri": BEGIN,
-    "Tropical" : BEGIN , 
-    "Topinembourg": BEGIN , 
-    "Tyty": BEGIN 
+    "A1": BEGIN,
+    "B1" : BEGIN , 
+    "C1": BEGIN , 
+    "D1": BEGIN 
 }
 dictionnaryRabbitPLayer2 = {
-    "Zebre": BEGIN,
-    "Zebron" : BEGIN, 
-    "Zebru": BEGIN, 
-    "Zimbabwa": BEGIN 
+    "A2": BEGIN,
+    "B2" : BEGIN, 
+    "C2": BEGIN, 
+    "D2": BEGIN 
 }
 
 def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
@@ -50,6 +50,7 @@ def chooseRabbitToMoove(player):
             index += 1
 
     index = int(input("Saisir le numéro du lapin à avancer : ")) - 1
+    print("\n")
 
     return listKeys[index]
 

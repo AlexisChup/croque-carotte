@@ -9,13 +9,6 @@ RABBIT_PLAYER_2 =   2
 HOLE =              3
 
 
-SYMBOL_CELL = {
-    FREE_PLACE:         " ",
-    RABBIT_PLAYER_2:    "R2",
-    RABBIT_PLAYER_1:    "R1",
-    HOLE:               "O"
-}
-
 ERROR =         -2
 MOVING_1 =      1
 MOVING_2 =      2
