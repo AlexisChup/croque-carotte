@@ -5,16 +5,16 @@ from display import displayWinner
 from utils import handleInputRabbitNumero
 
 dictionnaryRabbitPLayer1 = {
-    "TriTri": BEGIN,
-    "Tropical" : BEGIN , 
-    "Topinembourg": BEGIN , 
-    "Tyty": BEGIN 
+    "A1": BEGIN,
+    "B1" : BEGIN , 
+    "C1": BEGIN , 
+    "D1": BEGIN 
 }
 dictionnaryRabbitPLayer2 = {
-    "Zebre": BEGIN,
-    "Zebron" : BEGIN, 
-    "Zebru": BEGIN, 
-    "Zimbabwa": BEGIN 
+    "A2": BEGIN,
+    "B2" : BEGIN, 
+    "C2": BEGIN, 
+    "D2": BEGIN 
 }
 
 def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
