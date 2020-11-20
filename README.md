@@ -11,6 +11,7 @@ TODO:
 - [X] Créer les trous dès le début
 - [X] Afficher les numéros des cases en dessous
 - [X] Détection de fin de partie
+- [ ] Corriger les lapins qui reculent
 - [ ] Afficher le nom des lapins -> T
 - [ ] Gestions des erreurs (try/catch) -> A
 - [ ] Affichage simple de toutes les infos
