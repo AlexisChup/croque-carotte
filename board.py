@@ -15,7 +15,7 @@ def returnRandomPositionOfHole():
     isPositionFound = False
 
     while(not isPositionFound):
-        positionOfHole = random.randint(0, 23)
+        positionOfHole = random.randint(0, WIN_CELL-1)
 
         if(board[positionOfHole] != HOLE):
             isPositionFound = True

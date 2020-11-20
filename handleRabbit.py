@@ -1,5 +1,7 @@
 
 from board import*
+from constants import *
+from display import displayWinner
 
 dictionnaryRabbitPLayer1 = {
     "TriTri": BEGIN,
@@ -18,8 +20,16 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     dictionnary = chooseGoodDictionnary(player)
     posRabbit = findPosRabbit(keyOfRabbit, player)
     name = findNameRabbit(player)
+    print("new pos : ", posRabbit+valeur)
 
-    if board[posRabbit+valeur] == FREE_PLACE:
+    if(posRabbit+valeur >= WIN_CELL):
+        displayWinner(player)
+        board[posRabbit] = FREE_PLACE
+        board[WIN_CELL] = name
+
+        return IS_STOP_PLAYING
+
+    elif board[posRabbit+valeur] == FREE_PLACE:
         board[posRabbit+valeur] = name
         dictionnary[keyOfRabbit] += valeur
         board[posRabbit] = FREE_PLACE
@@ -31,7 +41,7 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     else:
         mooveRabbitOnBoard(keyOfRabbit, valeur+1, player)
 
-    return board
+    return IS_CONTINUING_PLAYING
     
 
 

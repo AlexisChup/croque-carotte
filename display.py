@@ -48,3 +48,6 @@ def displayCaseNumer():
 
 def displayCurrentPlayer(player):
     print(DICO_PLAYER_NAME[player], " À toi de jouer !")
+
+def displayWinner(player):
+    print(DICO_PLAYER_NAME[player], "WON !!!!")
