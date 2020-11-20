@@ -19,7 +19,7 @@ def displayOptions():
     print("\tq : Quitter")
 
 def displayValueOfCard(card):
-    print("Carte tirée : ", DICO_DISPLAY_CARD[card])
+    print("\nCARTE TIRÉE : ", DICO_DISPLAY_CARD[card], "\n")
 
 def displayBoard():
     displayVerticalLineBoard()
@@ -28,7 +28,7 @@ def displayBoard():
     displayCaseNumer()
 
 def displayVerticalLineBoard():
-    print("▬"*NUMBER_OF_CELL*3, end='',)
+    print("▬"*NUMBER_OF_CELL*4, end='',)
     print("")
 
 def displayBoardCell():
@@ -36,13 +36,13 @@ def displayBoardCell():
         # if board == RABBIT_PLAYER_1
         #     print(SYMBOL_CELL[cell], end='│ ',)
 
-        print(SYMBOL_CELL[cell], end='│ ',)
+        print(SYMBOL_CELL[cell], end=' │ ',)
 
     print("")
 
 def displayCaseNumer():
-    for num in range(NUMBER_OF_CELL):
-        print(str(num).zfill(2), end="│")
+    for num in range(1, NUMBER_OF_CELL+1):
+        print(str(num).zfill(2), end="│ ")
     
     print("")
 

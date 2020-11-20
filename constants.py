@@ -39,6 +39,6 @@ PLAYER_1 = 0
 PLAYER_2 = 1
 
 DICO_PLAYER_NAME = {
-    PLAYER_1: "Joueur 1",
-    PLAYER_2: "Joueur 2"
+    PLAYER_1: "TRISTAN",
+    PLAYER_2: "ZAZA"
 }
