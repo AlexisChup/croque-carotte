@@ -1,5 +1,10 @@
 NUMBER_OF_CELL =    24
+WIN_CELL = NUMBER_OF_CELL - 1
 NUMBER_OF_CARDS =   24
+
+IS_CONTINUING_PLAYING = True
+IS_STOP_PLAYING =       False
+
 
 FALLEN =            -2
 BEGIN =             -1

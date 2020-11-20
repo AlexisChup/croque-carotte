@@ -32,7 +32,7 @@ if __name__ == "__main__":
         # MOOVE RABBIT
         if(currentCard != MOVING_CARROT):
             keyOfRabbit = chooseRabbitToMoove(currentPlayer)
-            mooveRabbitOnBoard(keyOfRabbit, currentCard, currentPlayer)
+            isPlaying = mooveRabbitOnBoard(keyOfRabbit, currentCard, currentPlayer)
         else:
             insertRandomHole()
 

@@ -8,11 +8,11 @@
 TODO:
 - [X] Deck de cartes
 - [X] Déplacement des lapins
-- [X] Créer les trous dès le début -> A
-- [X] Afficher les numéros des cases en dessous -> A
+- [X] Créer les trous dès le début
+- [X] Afficher les numéros des cases en dessous
+- [X] Détection de fin de partie
 - [ ] Afficher le nom des lapins -> T
-- [ ] Détection de fin de partie
-- [ ] Gestions des erreurs (try/catch)
+- [ ] Gestions des erreurs (try/catch) -> A
 - [ ] Affichage simple de toutes les infos
 
 
