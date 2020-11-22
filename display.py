@@ -1,7 +1,7 @@
 import os
 
-from constants import *
-from board import *
+from globalConstants import *
+from globalVariables import *
 
 def displayMenu():
     # os.system("clear")

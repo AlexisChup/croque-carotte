@@ -1,34 +1,37 @@
 
-from board import*
-from constants import *
+from globalConstants import *
+from globalVariables import *
+
 from display import displayWinner
 from utils import handleInputRabbitNumero
 
-def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
+def mooveRabbitOnBoard(valeur, player):
     dictionnary = chooseGoodDictionnary(player)
-    posRabbit = findPosRabbit(keyOfRabbit, player)
+    keyOfRabbit = chooseRabbitToMoove(player)
     name = findNameRabbit(player)
+
+    posRabbit = findPosRabbit(keyOfRabbit, player)
 
     # À changer par la suite
     if(posRabbit+valeur >= WIN_CELL):
         displayWinner(player)
         board[posRabbit] = FREE_PLACE
-        dictionnary[keyOfRabbit] = WIN_CELL
         board[WIN_CELL] = name
+        dictionnary[keyOfRabbit] = WIN_CELL
 
         return IS_STOP_PLAYING
 
     elif board[posRabbit+valeur] == FREE_PLACE:
         board[posRabbit+valeur] = name
-        dictionnary[keyOfRabbit] += valeur
         board[posRabbit] = FREE_PLACE
+        dictionnary[keyOfRabbit] += valeur
 
     elif board[posRabbit+valeur] == HOLE:
         board[posRabbit] = FREE_PLACE
         dictionnary[keyOfRabbit] = FALLEN
 
     else:
-        mooveRabbitOnBoard(keyOfRabbit, valeur+1, player)
+        mooveRabbitOnBoard(valeur+1, player)
 
     return isRabbitLeft()
     
@@ -60,8 +63,6 @@ def chooseGoodDictionnary(player):
     return containerDictionnaries[player]
 
 def findNameRabbit(player):
-    dic = chooseGoodDictionnary(player)
-    
     if player == PLAYER_1:
         return RABBIT_PLAYER_1
     else:
@@ -92,6 +93,7 @@ def isRabbitLeft():
         if(isAllFallen):
             # is all rabbit of one's player is fallen, the winner is the other player
             displayWinner((index+1)%2)
+            
             return IS_STOP_PLAYING
 
         index += 1

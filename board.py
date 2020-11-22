@@ -1,59 +1,44 @@
 # This files is used to created
 # and display the board
 # of the game
+from globalConstants import *
+from globalVariables import *
 
-import random
-from constants import *
-        
-dictionnaryRabbitPLayer1 = {
-    "A1": BEGIN,
-    "B1" : BEGIN , 
-    "C1": BEGIN , 
-    "D1": BEGIN 
-}
-dictionnaryRabbitPLayer2 = {
-    "A2": BEGIN,
-    "B2" : BEGIN, 
-    "C2": BEGIN, 
-    "D2": BEGIN 
-}
+from display import *
+from handleRabbit import *
+from utils import *
 
-# use to loop over the 2 dictionnary
-containerDictionnaries = [dictionnaryRabbitPLayer1, dictionnaryRabbitPLayer2]
+from cards import getCard
+from holes import insertRandomHole
 
 def initBoard():
-    return [0 for i in range (NUMBER_OF_CELL)]
+    insertRandomHole()
 
-board = initBoard()
+def playTurn(player):
+        # MENU & CURRENT PLAYER
+        displayMenu()
+        displayCurrentPlayer(player)
 
-def returnRandomPositionOfHole():
-    isPositionFound = False
+        # IS PLAYING AGAIN
+        displayPlayerAction()
+        isPlaying = handleInputPlayerAction()
 
-    while(not isPositionFound):
-        positionOfHole = random.randint(0, WIN_CELL-1)
+        if(isPlaying):
+            # CARD
+            displayBoard()
+            currentCard = getCard()
+            displayValueOfCard(currentCard)
 
-        if(board[positionOfHole] != HOLE):
-            isPositionFound = True
-        
-    return positionOfHole
+            # MOOVE RABBIT
+            if(currentCard != MOVING_CARROT):
+                isPlaying = mooveRabbitOnBoard(currentCard, player)
+            # MOOVE CARROT
+            else:
+                listPositionOfFuturFallenRabbit = insertRandomHole()
+                if(len(listPositionOfFuturFallenRabbit) > 0):
+                    isPlaying = makeRabbitFallen(listPositionOfFuturFallenRabbit)
 
-def removeOlderHoles():
-    for index in range(len(board)):
-        if(board[index] == HOLE):
-            board[index] = FREE_PLACE
+            # BOARD
+            displayBoard()
 
-
-def insertRandomHole():
-    removeOlderHoles()
-    numberOfHoles = random.randint(1, 7)
-    listPositionOfFuturFallenRabbit = []
-
-    for hole in range(numberOfHoles):
-        positionOfHole = returnRandomPositionOfHole()
-
-        if(board[positionOfHole] != FREE_PLACE):
-            listPositionOfFuturFallenRabbit.append(positionOfHole)
-
-        board[positionOfHole] = HOLE
-
-    return listPositionOfFuturFallenRabbit
+        return isPlaying

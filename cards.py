@@ -1,7 +1,19 @@
 import random
-from constants import *
+from globalConstants import NUMBER_OF_CARDS
 
 listOfCards = []
+
+def getCard():
+    if(len(listOfCards) > 0):
+        return listOfCards.pop()
+    else:
+        prepareListOfCards()
+
+        return getCard()
+
+def prepareListOfCards():
+    initListOfCards()
+    shuffleListOfCards()
 
 def initListOfCards():
     for index in range(NUMBER_OF_CARDS):
@@ -12,14 +24,5 @@ def initListOfCards():
 def shuffleListOfCards():
     random.shuffle(listOfCards)
 
-def prepareListOfCards():
-    initListOfCards()
-    shuffleListOfCards()
 
-def getCard():
-    if(len(listOfCards) > 0):
-        return listOfCards.pop()
-    else:
-        prepareListOfCards()
 
-        return getCard()
