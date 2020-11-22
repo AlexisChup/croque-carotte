@@ -31,7 +31,8 @@ def playTurn(player):
 
             # MOOVE RABBIT
             if(currentCard != MOVING_CARROT):
-                isPlaying = mooveRabbitOnBoard(currentCard, player)
+                keyOfRabbit = chooseRabbitToMoove(player)
+                isPlaying = mooveRabbitOnBoard(keyOfRabbit, currentCard, player)
             # MOOVE CARROT
             else:
                 listPositionOfFuturFallenRabbit = insertRandomHole()

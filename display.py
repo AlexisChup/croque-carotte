@@ -1,5 +1,7 @@
 import os
 
+from colorama import Fore, Back, Style
+
 from globalConstants import *
 from globalVariables import *
 
@@ -19,7 +21,7 @@ def displayPlayerAction():
     print("\tAutre : Tirer une carte")
 
 def displayValueOfCard(card):
-    print("\nCARTE TIRÉE : ", DICO_DISPLAY_CARD[card], "\n")
+    print("\nCARTE TIRÉE : ", Style.BRIGHT, Fore.RED, DICO_DISPLAY_CARD[card], Style.RESET_ALL,"\n")
 
 def displayBoard():
     displayHorizontalLineBoard()
@@ -28,26 +30,26 @@ def displayBoard():
     displayCaseNumer()
 
 def displayHorizontalLineBoard():
-    print("▬"*NUMBER_OF_CELL*5, end='',)
+    print(Fore.RED, Style.BRIGHT, "▬"*NUMBER_OF_CELL*5, Style.RESET_ALL, end='', sep="")
     print("")
 
 def displayBoardCell():
     for cell in range(NUMBER_OF_CELL):
         if board[cell] == HOLE:
-            print(" ██ ", end='│')
+            print(Fore.WHITE, "████", Fore.RED, Style.BRIGHT, "│", Style.RESET_ALL, end='', sep="")
             
         elif board[cell] == RABBIT_PLAYER_1:
             for key in dictionnaryRabbitPLayer1:
                 if cell == dictionnaryRabbitPLayer1[key]:
-                    print(" ", key, " ", end='│', sep="")
+                    print(Fore.GREEN,"█", key, "█", Fore.RED, Style.BRIGHT, "│", Style.RESET_ALL, end='', sep="")
 
         elif board[cell] == RABBIT_PLAYER_2:
             for key in dictionnaryRabbitPLayer2:
                 if cell == dictionnaryRabbitPLayer2[key]:
-                    print(" ", key, " ", end='│', sep="")
+                    print(Fore.BLUE, "█", key, "█", Fore.RED, Style.BRIGHT, "│", Style.RESET_ALL, end='', sep="")
 
         else :
-            print("    ", end='│')
+            print("    ", Fore.RED, Style.BRIGHT, "│", Style.RESET_ALL, end='', sep="")
 
     print("")
 
@@ -58,7 +60,7 @@ def displayCaseNumer():
     print("")
 
 def displayCurrentPlayer(player):
-    print(DICO_PLAYER_NAME[player], " À toi de jouer !")
+    print(Style.BRIGHT, Fore.RED, DICO_PLAYER_NAME[player], Style.RESET_ALL, " À toi de jouer !")
 
 def displayWinner(player):
     print(DICO_PLAYER_NAME[player], "WON !!!!")

@@ -5,9 +5,8 @@ from globalVariables import *
 from display import displayWinner
 from utils import handleInputRabbitNumero
 
-def mooveRabbitOnBoard(valeur, player):
+def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     dictionnary = chooseGoodDictionnary(player)
-    keyOfRabbit = chooseRabbitToMoove(player)
     name = findNameRabbit(player)
 
     posRabbit = findPosRabbit(keyOfRabbit, player)
@@ -31,7 +30,7 @@ def mooveRabbitOnBoard(valeur, player):
         dictionnary[keyOfRabbit] = FALLEN
 
     else:
-        mooveRabbitOnBoard(valeur+1, player)
+        mooveRabbitOnBoard(keyOfRabbit, valeur+1, player)
 
     return isRabbitLeft()
     
@@ -93,7 +92,7 @@ def isRabbitLeft():
         if(isAllFallen):
             # is all rabbit of one's player is fallen, the winner is the other player
             displayWinner((index+1)%2)
-            
+
             return IS_STOP_PLAYING
 
         index += 1

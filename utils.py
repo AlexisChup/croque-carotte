@@ -10,7 +10,8 @@ def handleInputRabbitNumero(numberOfRabbitAlive):
 
             # this if is used to be faster in the game
             # by default, if the user press [ENTER], the rabbit number will be 1
-            if(inputNumeroOfRabbit == "\n" or inputNumeroOfRabbit == "\r" or inputNumeroOfRabbit == ""):
+            if(inputNumeroOfRabbit == ""):
+                isInputCorrect = True
                 inputNumeroOfRabbit = 1
             
             inputNumeroOfRabbit = int(inputNumeroOfRabbit)
