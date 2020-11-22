@@ -1,2 +1,2 @@
-def returnNextPlayer(currentPlayer, numberOfPlayer):
-    return (currentPlayer + 1) % numberOfPlayer
+def returnNextPlayer(currentPlayer):
+    return (currentPlayer + 1) % 2

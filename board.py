@@ -18,6 +18,9 @@ dictionnaryRabbitPLayer2 = {
     "D2": BEGIN 
 }
 
+# use to loop over the 2 dictionnary
+containerDictionnaries = [dictionnaryRabbitPLayer1, dictionnaryRabbitPLayer2]
+
 def initBoard():
     return [0 for i in range (NUMBER_OF_CELL)]
 
@@ -42,7 +45,7 @@ def removeOlderHoles():
 
 def insertRandomHole():
     removeOlderHoles()
-    numberOfHoles = random.randint(1, 3)
+    numberOfHoles = random.randint(1, 7)
     listPositionOfFuturFallenRabbit = []
 
     for hole in range(numberOfHoles):

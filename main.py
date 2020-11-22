@@ -32,13 +32,13 @@ if __name__ == "__main__":
         if(currentCard != MOVING_CARROT):
             keyOfRabbit = chooseRabbitToMoove(currentPlayer)
             isPlaying = mooveRabbitOnBoard(keyOfRabbit, currentCard, currentPlayer)
+        # MOOVE CARROT
         else:
             listPositionOfFuturFallenRabbit = insertRandomHole()
             if(len(listPositionOfFuturFallenRabbit) > 0):
-                makeRabbitFallen(listPositionOfFuturFallenRabbit)
+                isPlaying = makeRabbitFallen(listPositionOfFuturFallenRabbit)
 
         # BOARD
         displayBoard()
-
-        currentPlayer = returnNextPlayer(currentPlayer, NUMBER_OF_PLAYERS)
+        currentPlayer = returnNextPlayer(currentPlayer)
         

@@ -30,9 +30,13 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     else:
         mooveRabbitOnBoard(keyOfRabbit, valeur+1, player)
 
-    return IS_CONTINUING_PLAYING
+    return isRabbitLeft()
     
 def chooseRabbitToMoove(player):
+    """
+    Show to user only not fallen rabbit
+    """
+
     dictionnaryRabbit = chooseGoodDictionnary(player)
     index = 1
     listKeys = []
@@ -53,10 +57,11 @@ def chooseRabbitToMoove(player):
     return listKeys[index]
 
 def chooseGoodDictionnary(player):
-    return dictionnaryRabbitPLayer1 if(player == PLAYER_1) else dictionnaryRabbitPLayer2
+    return containerDictionnaries[player]
 
 def findNameRabbit(player):
     dic = chooseGoodDictionnary(player)
+    
     if player == PLAYER_1:
         return RABBIT_PLAYER_1
     else:
@@ -68,10 +73,27 @@ def findPosRabbit(keyOfRabbit, player):
     return dictionary[keyOfRabbit]
 
 def makeRabbitFallen(listPositionOfFuturFallenRabbit):
-    for position in listPositionOfFuturFallenRabbit:
-        for key in dictionnaryRabbitPLayer1:
-            if(dictionnaryRabbitPLayer1[key] == position):
-                dictionnaryRabbitPLayer1[key] = FALLEN
-        for key in dictionnaryRabbitPLayer2:
-            if(dictionnaryRabbitPLayer2[key] == position):
-                dictionnaryRabbitPLayer2[key] = FALLEN
+    for dictionnary in containerDictionnaries:
+        for position in listPositionOfFuturFallenRabbit:
+            for key in dictionnary:
+                if(dictionnary[key] == position):
+                    dictionnary[key] = FALLEN
+
+    return isRabbitLeft()
+
+def isRabbitLeft():
+    index = 0
+
+    for dictionnary in containerDictionnaries:
+        isAllFallen = True
+        for position in dictionnary.values():
+            isAllFallen &= (position == FALLEN)
+
+        if(isAllFallen):
+            # is all rabbit of one's player is fallen, the winner is the other player
+            displayWinner((index+1)%2)
+            return IS_STOP_PLAYING
+
+        index += 1
+
+    return IS_CONTINUING_PLAYING
