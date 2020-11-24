@@ -15,6 +15,7 @@ def initBoard():
     insertRandomHole()
 
 def playTurn(player):
+        print('player : ', player)
         # MENU & CURRENT PLAYER
         displayMenu()
         displayCurrentPlayer(player)
@@ -22,6 +23,7 @@ def playTurn(player):
         # IS PLAYING AGAIN
         displayPlayerAction()
         isPlaying = handleInputPlayerAction()
+        # clearConsole()
 
         if(isPlaying):
             # CARD
