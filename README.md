@@ -17,6 +17,7 @@ TODO:
 - [X] Gérer le cas où tous les lapins d'un joueur sont morts
 - [ ] Reculer les lapins quand ils touchent la carotte (trop de cases) -> T
 - [ ] Meilleur affichage des noms des lapins (couleurs) -> A
+- [ ] Ajouter une enum pour les différentes cases de la board
 - [ ] Création du menu pour saisir les actions
 - [ ] Rajouter des commentaires
 

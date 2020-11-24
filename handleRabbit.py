@@ -12,13 +12,25 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     positionRabbit = dictionnary[keyOfRabbit]
 
     # À changer par la suite
-    if(positionRabbit+valeur >= WIN_CELL):
+    if(positionRabbit+valeur == WIN_CELL):
         displayWinner(player)
         board[positionRabbit] = FREE_PLACE
         board[WIN_CELL] = name
         dictionnary[keyOfRabbit] = WIN_CELL
 
         return IS_STOP_PLAYING
+    
+    elif (positionRabbit+valeur > WIN_CELL):
+        board[positionRabbit] = FREE_PLACE
+        newPositionOfRabbit = WIN_CELL - (valeur + dictionnary[keyOfRabbit] - WIN_CELL)
+        moveBack = 0
+        if board[newPositionOfRabbit] != FREE_PLACE:
+            while board[newPositionOfRabbit] != FREE_PLACE:
+                newPositionOfRabbit = WIN_CELL - (valeur + dictionnary[keyOfRabbit] - WIN_CELL) - moveBack
+                moveback =+1
+        
+        board[newPositionOfRabbit] = name
+        dictionnary[keyOfRabbit] = newPositionOfRabbit
 
     elif board[positionRabbit+valeur] == FREE_PLACE:
         board[positionRabbit+valeur] = name

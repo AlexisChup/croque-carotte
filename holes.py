@@ -12,7 +12,8 @@ def insertRandomHole():
     on the futur hole's position
     """
     removeOlderHoles()
-    numberOfHoles = random.randint(1, 3)
+    numberOfHoles = 0
+    # numberOfHoles = random.randint(1, 3)
     listPositionOfFuturFallenRabbit = []
 
     for hole in range(numberOfHoles):
