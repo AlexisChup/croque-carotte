@@ -2,8 +2,8 @@ from globalConstants import *
 
 dictionnaryRabbitPLayer1 = {
     "A1": BEGIN,
-    "B1" : BEGIN , 
-    "C1": BEGIN , 
+    "B1" : BEGIN, 
+    "C1": BEGIN, 
     "D1": BEGIN 
 }
 dictionnaryRabbitPLayer2 = {

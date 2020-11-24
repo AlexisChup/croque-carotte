@@ -54,7 +54,7 @@ def displayBoardCell():
     print("")
 
 def displayCaseNumer():
-    for num in range(1, NUMBER_OF_CELL+1):
+    for num in range(0, NUMBER_OF_CELL):
         print("", str(num).zfill(2), "", end="│")
     
     print("")
