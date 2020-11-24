@@ -17,7 +17,10 @@ TODO:
 - [X] Gérer le cas où tous les lapins d'un joueur sont morts
 - [ ] Reculer les lapins quand ils touchent la carotte (trop de cases) -> T
 - [ ] Meilleur affichage des noms des lapins (couleurs) -> A
-
-- [ ] Sauvegarde
 - [ ] Création du menu pour saisir les actions
-- [ ] Refacto
+- [ ] Rajouter des commentaires
+
+- [ ] Cahier des charges de base
+- [ ] Cahier des charges extension : joueur sur son "propre écran" (voir PDF)
+- [ ] Cahier des charges extensions au souhait
+

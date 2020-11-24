@@ -22,6 +22,7 @@ def playTurn(player):
         # IS PLAYING AGAIN
         displayPlayerAction()
         isPlaying = handleInputPlayerAction()
+        clearConsole()
 
         if(isPlaying):
             # CARD

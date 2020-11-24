@@ -9,24 +9,24 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     dictionnary = chooseGoodDictionnary(player)
     name = findNameRabbit(player)
 
-    posRabbit = findPosRabbit(keyOfRabbit, player)
+    positionRabbit = dictionnary[keyOfRabbit]
 
     # À changer par la suite
-    if(posRabbit+valeur >= WIN_CELL):
+    if(positionRabbit+valeur >= WIN_CELL):
         displayWinner(player)
-        board[posRabbit] = FREE_PLACE
+        board[positionRabbit] = FREE_PLACE
         board[WIN_CELL] = name
         dictionnary[keyOfRabbit] = WIN_CELL
 
         return IS_STOP_PLAYING
 
-    elif board[posRabbit+valeur] == FREE_PLACE:
-        board[posRabbit+valeur] = name
-        board[posRabbit] = FREE_PLACE
+    elif board[positionRabbit+valeur] == FREE_PLACE:
+        board[positionRabbit+valeur] = name
+        board[positionRabbit] = FREE_PLACE
         dictionnary[keyOfRabbit] += valeur
 
-    elif board[posRabbit+valeur] == HOLE:
-        board[posRabbit] = FREE_PLACE
+    elif board[positionRabbit+valeur] == HOLE:
+        board[positionRabbit] = FREE_PLACE
         dictionnary[keyOfRabbit] = FALLEN
 
     else:
@@ -36,7 +36,8 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     
 def chooseRabbitToMoove(player):
     """
-    Show to user only not fallen rabbit
+    Display only not fallen rabbit
+    & all user to choose which rabbit will move forward
     """
 
     dictionnaryRabbit = chooseGoodDictionnary(player)
