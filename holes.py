@@ -3,35 +3,51 @@ import random
 from globalConstants import *
 from globalVariables import *
 
-def insertRandomHole():
+def insertRandomHole(randomPosition):
     """
     Remove & insert 
     between 1 & 3 holes on the board.
 
     Also detect & return if they are rabbits
     on the futur hole's position
+
+    If listPositionOfHoles is set, set holes in those positions
     """
-    removeOlderHoles()
-    numberOfHoles = random.randint(1, 3)
-    listPositionOfFuturFallenRabbit = []
+    # random position
+    if(randomPosition == None):
+        removeOlderHoles()
+        numberOfHoles = random.randint(1, 3)
+        listPositionOfFuturFallenRabbit = []
 
-    for hole in range(numberOfHoles):
-        positionOfHole = returnRandomPositionOfHole()
+        for hole in range(numberOfHoles):
+            positionOfHole = returnRandomPositionOfHole()
+            listPositionOfHoles.append(positionOfHole)
 
-        if(board[positionOfHole] != Board.FREE_PLACE.value):
-            listPositionOfFuturFallenRabbit.append(positionOfHole)
+            if(board[positionOfHole] != Board.FREE_PLACE.value):
+                listPositionOfFuturFallenRabbit.append(positionOfHole)
 
-        board[positionOfHole] = Board.HOLE.value
+            board[positionOfHole] = Board.HOLE.value
+    # backup
+    else:
+        for holePosition in listPositionOfHoles:
+            print(holePosition)
+            board[holePosition] = Board.HOLE.value
+
+        listPositionOfFuturFallenRabbit = []
+
+
 
     return listPositionOfFuturFallenRabbit
 
 def removeOlderHoles():
     """
-    Remove all older holes on the board
+    Remove all older holes on the board & in the global variable
     """
     for index in range(len(board)):
         if(board[index] == Board.HOLE.value):
             board[index] = Board.FREE_PLACE.value
+
+    listPositionOfHoles.clear()
 
 def returnRandomPositionOfHole():
     """

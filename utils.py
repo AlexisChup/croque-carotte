@@ -33,11 +33,13 @@ def handleInputRabbitNumero(numberOfRabbitAlive):
     return (inputNumeroOfRabbit - 1) # -1 because array start at 0
 
 def handleInputPlayerAction():
+    pos(9, 11)
     playerAction = input()
 
     return False if (playerAction == 'q' or playerAction == 'Q') else True
 
 def handleInputPlayerActionMenu():
+    pos(75, 26)
     ActionMenu = input()
 
     return True if (ActionMenu == 'R' or ActionMenu == 'r') else False

@@ -12,11 +12,11 @@ def displayMenu():
     print("         CROQUE-CAROTTE MENU         ".center(60, '█'))
     pos(75, 19)
     displayHoritonzaleLine()
-    pos(75, 20)
-    print("Entrez un caractère : \n")
     pos(75, 21)
+    print("Entrez un caractère : \n")
+    pos(75, 23)
     print("R : afficher les règles du jeu")
-    pos(75, 22)
+    pos(75, 24)
     print("Autre : commencer une partie")
 
 def displayCurrentPlayer(player):
@@ -38,7 +38,7 @@ def displayPlayerAction():
     """
     Either player continuing or quit
     """    
-    print("\tEntrez un caractère : ")
+    print("\tEntrez un caractère : \n")
     print("\tq : Quitter")
     print("\tAutre : Tirer une carte")
     # print("\tR : afficher les règles du jeu")

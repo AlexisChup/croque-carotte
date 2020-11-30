@@ -112,3 +112,5 @@ def isRabbitLeft():
         index += 1
 
     return IS_CONTINUING_PLAYING
+
+
