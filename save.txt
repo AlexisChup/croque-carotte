@@ -1,0 +1,11 @@
+Rabbit player1:
+1: FALLEN
+2: FALLEN
+3: FALLEN
+4: FALLEN
+
+Rabbit player2:
+1: FALLEN
+2: FALLEN
+3: FALLEN
+4: FALLEN

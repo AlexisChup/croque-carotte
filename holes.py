@@ -12,17 +12,16 @@ def insertRandomHole():
     on the futur hole's position
     """
     removeOlderHoles()
-    numberOfHoles = 0
-    # numberOfHoles = random.randint(1, 3)
+    numberOfHoles = random.randint(1, 3)
     listPositionOfFuturFallenRabbit = []
 
     for hole in range(numberOfHoles):
         positionOfHole = returnRandomPositionOfHole()
 
-        if(board[positionOfHole] != FREE_PLACE):
+        if(board[positionOfHole] != Board.FREE_PLACE.value):
             listPositionOfFuturFallenRabbit.append(positionOfHole)
 
-        board[positionOfHole] = HOLE
+        board[positionOfHole] = Board.HOLE.value
 
     return listPositionOfFuturFallenRabbit
 
@@ -31,8 +30,8 @@ def removeOlderHoles():
     Remove all older holes on the board
     """
     for index in range(len(board)):
-        if(board[index] == HOLE):
-            board[index] = FREE_PLACE
+        if(board[index] == Board.HOLE.value):
+            board[index] = Board.FREE_PLACE.value
 
 def returnRandomPositionOfHole():
     """
@@ -44,7 +43,7 @@ def returnRandomPositionOfHole():
     while(not isPositionFound):
         positionOfHole = random.randint(0, WIN_CELL-1)
 
-        if(board[positionOfHole] != HOLE):
+        if(board[positionOfHole] != Board.HOLE.value):
             isPositionFound = True
         
     return positionOfHole

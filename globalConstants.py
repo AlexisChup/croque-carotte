@@ -1,3 +1,5 @@
+from enum import Enum, auto
+
 # General constants
 NUMBER_OF_CELL =    24
 WIN_CELL = NUMBER_OF_CELL - 1
@@ -8,12 +10,13 @@ IS_CONTINUING_PLAYING = True
 IS_STOP_PLAYING =       False
 
 # Board's cells signification
-FALLEN =            -2
-BEGIN =             -1
-FREE_PLACE =        0
-RABBIT_PLAYER_1 =   1
-RABBIT_PLAYER_2 =   2
-HOLE =              3
+class Board(Enum):
+    FALLEN =            -2
+    BEGIN =             auto()
+    FREE_PLACE =        auto()
+    RABBIT_PLAYER_1 =   auto()
+    RABBIT_PLAYER_2 =   auto()
+    HOLE =              auto()
 
 # Naming players for functions
 PLAYER_1 =      0

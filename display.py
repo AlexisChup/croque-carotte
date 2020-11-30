@@ -52,15 +52,15 @@ def displayHorizontalLineBoard():
 
 def displayBoardCell():
     for cell in range(NUMBER_OF_CELL-1):
-        if board[cell] == HOLE:
+        if board[cell] == Board.HOLE.value:
             printOneCell(Fore.WHITE, "████")
             
-        elif board[cell] == RABBIT_PLAYER_1:
+        elif board[cell] == Board.RABBIT_PLAYER_1.value:
             for key in dictionnaryRabbitPLayer1:
                 if cell == dictionnaryRabbitPLayer1[key]:
                     printOneCell(Fore.GREEN, "█"+key+"█")
 
-        elif board[cell] == RABBIT_PLAYER_2:
+        elif board[cell] == Board.RABBIT_PLAYER_2.value:
             for key in dictionnaryRabbitPLayer2:
                 if cell == dictionnaryRabbitPLayer2[key]:
                     printOneCell(Fore.BLUE, "█"+key+"█")
@@ -76,7 +76,7 @@ def printOneCell(color, content):
     print(color, content, Fore.RED, Style.BRIGHT, "│", Style.RESET_ALL, end='', sep="")
 
 def displayCaseNumer():
-    for num in range(0, NUMBER_OF_CELL):
+    for num in range(1, NUMBER_OF_CELL+1):
         print("", str(num).zfill(2), "", end="│")
     
     print("")
