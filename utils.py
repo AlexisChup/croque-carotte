@@ -1,4 +1,5 @@
 from Errors import ValueNotInInterval
+from display import pos
 
 def handleInputRabbitNumero(numberOfRabbitAlive):
     isInputCorrect = False
@@ -6,6 +7,7 @@ def handleInputRabbitNumero(numberOfRabbitAlive):
 
     while(not isInputCorrect):
         try:
+            pos(10, 32)
             inputNumeroOfRabbit = input("Saisir le numéro du lapin à avancer : ")
 
             # this if is used to be faster in the game
@@ -33,8 +35,11 @@ def handleInputRabbitNumero(numberOfRabbitAlive):
 def handleInputPlayerAction():
     playerAction = input()
 
-    return False if (playerAction == 'q') else True
+    return False if (playerAction == 'q' or playerAction == 'Q') else True
 
+def handleInputPlayerActionMenu():
+    ActionMenu = input()
 
+    return True if (ActionMenu == 'R' or ActionMenu == 'r') else False
 
 

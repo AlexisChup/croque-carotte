@@ -2,7 +2,7 @@
 from globalConstants import *
 from globalVariables import *
 
-from display import displayWinner
+from display import displayWinner, pos
 from utils import handleInputRabbitNumero
 
 def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
@@ -59,10 +59,11 @@ def chooseRabbitToMoove(player):
     for key in dictionnaryRabbit:
         if(dictionnaryRabbit[key] != Board.FALLEN.value):
             listKeys.append(key)
-
+    pos(10, 26)
     print("Pressez [ENTER] pour choisir :", listKeys[0])
     for key, value in dictionnaryRabbit.items():
         if(value != Board.FALLEN.value):
+            pos(10, 26+index)
             print(index, ": pour ", key)
             index += 1
 
