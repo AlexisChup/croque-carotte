@@ -14,32 +14,32 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     # À changer par la suite
     if(positionRabbit+valeur == WIN_CELL):
         displayWinner(player)
-        board[positionRabbit] = FREE_PLACE
+        board[positionRabbit] = Board.FREE_PLACE.value
         board[WIN_CELL] = name
         dictionnary[keyOfRabbit] = WIN_CELL
 
         return IS_STOP_PLAYING
     
     elif (positionRabbit+valeur > WIN_CELL):
-        board[positionRabbit] = FREE_PLACE
+        board[positionRabbit] = Board.FREE_PLACE.value
         newPositionOfRabbit = WIN_CELL - (valeur + dictionnary[keyOfRabbit] - WIN_CELL)
 
-        if board[newPositionOfRabbit] != FREE_PLACE: 
+        if board[newPositionOfRabbit] != Board.FREE_PLACE.value: 
             for pos in range(newPositionOfRabbit, 0, -1):               
-                if board[pos] == FREE_PLACE or board[pos] == HOLE:
+                if board[pos] == Board.FREE_PLACE.value or board[pos] == Board.HOLE.value:
                     newPositionOfRabbit = pos
                     break;
         board[newPositionOfRabbit] = name
         dictionnary[keyOfRabbit] = newPositionOfRabbit
 
-    elif board[positionRabbit+valeur] == FREE_PLACE:
+    elif board[positionRabbit+valeur] == Board.FREE_PLACE.value:
         board[positionRabbit+valeur] = name
-        board[positionRabbit] = FREE_PLACE
+        board[positionRabbit] = Board.FREE_PLACE.value
         dictionnary[keyOfRabbit] += valeur
 
-    elif board[positionRabbit+valeur] == HOLE:
-        board[positionRabbit] = FREE_PLACE
-        dictionnary[keyOfRabbit] = FALLEN
+    elif board[positionRabbit+valeur] == Board.HOLE.value:
+        board[positionRabbit] = Board.FREE_PLACE.value
+        dictionnary[keyOfRabbit] = Board.FALLEN.value
 
     else:
         mooveRabbitOnBoard(keyOfRabbit, valeur+1, player)
@@ -57,12 +57,12 @@ def chooseRabbitToMoove(player):
     listKeys = []
 
     for key in dictionnaryRabbit:
-        if(dictionnaryRabbit[key] != FALLEN):
+        if(dictionnaryRabbit[key] != Board.FALLEN.value):
             listKeys.append(key)
 
     print("Pressez [ENTER] pour choisir :", listKeys[0])
     for key, value in dictionnaryRabbit.items():
-        if(value != FALLEN):
+        if(value != Board.FALLEN.value):
             print(index, ": pour ", key)
             index += 1
 
@@ -76,9 +76,9 @@ def chooseGoodDictionnary(player):
 
 def findNameRabbit(player):
     if player == PLAYER_1:
-        return RABBIT_PLAYER_1
+        return Board.RABBIT_PLAYER_1.value
     else:
-        return RABBIT_PLAYER_2
+        return Board.RABBIT_PLAYER_2.value
 
 def findPosRabbit(keyOfRabbit, player):
     dictionary = chooseGoodDictionnary(player)
@@ -90,7 +90,7 @@ def makeRabbitFallen(listPositionOfFuturFallenRabbit):
         for position in listPositionOfFuturFallenRabbit:
             for key in dictionnary:
                 if(dictionnary[key] == position):
-                    dictionnary[key] = FALLEN
+                    dictionnary[key] = Board.FALLEN.value
 
     return isRabbitLeft()
 
@@ -100,7 +100,7 @@ def isRabbitLeft():
     for dictionnary in containerDictionnaries:
         isAllFallen = True
         for position in dictionnary.values():
-            isAllFallen &= (position == FALLEN)
+            isAllFallen &= (position == Board.FALLEN.value)
 
         if(isAllFallen):
             # is all rabbit of one's player is fallen, the winner is the other player
