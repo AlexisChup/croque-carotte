@@ -4,3 +4,9 @@ class ValueNotInInterval(Exception):
     (between the number of left rabbits of one's player)
     """
     pass
+
+class PositionIncorrect(Exception):
+    """
+    Raised when the position got isn't valid
+    """
+    pass

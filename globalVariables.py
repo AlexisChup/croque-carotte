@@ -22,3 +22,6 @@ containerDictionnaries = [dictionnaryRabbitPLayer1, dictionnaryRabbitPLayer2]
 
 # board to contain rabbits / holes / free places
 board = [0 for i in range (NUMBER_OF_CELL)]
+
+# list of all hole's position
+listPositionOfHoles = []

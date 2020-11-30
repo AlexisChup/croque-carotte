@@ -11,10 +11,13 @@ from utils import *
 from cards import getCard
 from holes import insertRandomHole
 
+from save import setBackUp, getBackUp
+
 def initBoard():
-    insertRandomHole()
+    insertRandomHole(True)
 
 def playTurn(player):
+        
         print('player : ', player)
         # MENU & CURRENT PLAYER
         displayMenu()
@@ -27,6 +30,8 @@ def playTurn(player):
 
         if(isPlaying):
             # CARD
+            getBackUp()
+            insertRandomHole(False)
             displayBoard()
             currentCard = getCard()
             displayValueOfCard(currentCard)
@@ -37,7 +42,7 @@ def playTurn(player):
                 isPlaying = mooveRabbitOnBoard(keyOfRabbit, currentCard, player)
             # MOOVE CARROT
             else:
-                listPositionOfFuturFallenRabbit = insertRandomHole()
+                listPositionOfFuturFallenRabbit = insertRandomHole(True)
                 if(len(listPositionOfFuturFallenRabbit) > 0):
                     isPlaying = makeRabbitFallen(listPositionOfFuturFallenRabbit)
 

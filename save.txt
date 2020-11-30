@@ -1,11 +1,16 @@
 Rabbit player1:
-1: FALLEN
-2: FALLEN
-3: FALLEN
-4: FALLEN
+A1: -1
+B1: -1
+C1: -1
+D1: -1
 
 Rabbit player2:
-1: FALLEN
-2: FALLEN
-3: FALLEN
-4: FALLEN
+A2: -1
+B2: -1
+C2: -1
+D2: -1
+
+Holes:
+13
+20
+17

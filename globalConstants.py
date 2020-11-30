@@ -1,4 +1,5 @@
 from enum import Enum, auto
+from Errors import PositionIncorrect
 
 # General constants
 NUMBER_OF_CELL =    24
@@ -17,6 +18,12 @@ class Board(Enum):
     RABBIT_PLAYER_1 =   auto()
     RABBIT_PLAYER_2 =   auto()
     HOLE =              auto()
+
+    def getFirstElement():
+        """
+        return the first element in the enum
+        """
+        return list(Board)[0].value
 
 # Naming players for functions
 PLAYER_1 =      0

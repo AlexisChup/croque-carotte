@@ -17,7 +17,7 @@ TODO:
 - [X] Gérer le cas où tous les lapins d'un joueur sont morts -> A
 - [X] Meilleur affichage des noms des lapins (couleurs) -> A
 - [ ] Reculer les lapins quand ils touchent la carotte (trop de cases) -> T
-- [ ] Cahier des charges extension : sauvegarde -> A
+- [ ] Cahier des charges extension : sauvegarde -> A (fait mais besoin de clean)
 - [ ] Ajouter une enum pour les différentes cases de la board
 - [ ] Création du menu pour saisir les actions
 - [ ] Rajouter des commentaires
