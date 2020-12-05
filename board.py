@@ -86,10 +86,11 @@ def playTurn(player):
                 isPlaying = makeRabbitFallen(listPositionOfFuturFallenRabbit)
 
         # BOARD
-        displayBoard()
-        pos(120, 40)
-        input("appuyer sur une touche quand vous avez fini votre tour")
-        clearConsole()
+        if(isPlaying):
+            displayBoard()
+            pos(120, 45)
+            input("appuyer sur une touche quand vous avez fini votre tour")
+            clearConsole()
 
     return isPlaying
 

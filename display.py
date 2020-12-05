@@ -6,6 +6,7 @@ from globalConstants import *
 from globalVariables import *
 
 
+
 def displayMenu():
     pos(75, 17)
     displayHoritonzaleLine()
@@ -14,7 +15,7 @@ def displayMenu():
     pos(75, 19)
     displayHoritonzaleLine()
     pos(75, 21)
-    print("Entrez un caractère : \n")
+    print("Entrez un caractère : ")
     pos(75, 23)
     print("[r] : afficher les règles du jeu")
     pos(75, 24)
@@ -100,7 +101,10 @@ def displayCaseNumer():
     print("")
 
 def displayWinner(player):
-    print(DICO_PLAYER_NAME[player], "WON !!!!")
+    clearConsole()
+    rabbitEndGame()
+    pos(70, 40)
+    print(Fore.WHITE, DICO_PLAYER_NAME[player], "Gagne la partie !!!")
 
 def displayRules():
     pos(10, 10)
@@ -154,3 +158,54 @@ def displayRules():
 
 def pos(x,y):
    print( "\x1b["+str(y)+";"+str(x)+"H",end="",sep="")
+
+def rabbitEndGame():
+    pos(70, 12)
+    print(Fore.RED, Style.BRIGHT, "▬"*17*5, Style.RESET_ALL, end='', sep="")
+    pos(70, 13)
+    print("                  ____     ____ ")
+    pos(70, 14)
+    print("                /'    |   |    \  ")
+    pos(70, 15)
+    print("              /    /  |   | \   \  ")
+    pos(70, 16)
+    print("            /    / |  |   |  \   \  ")
+    pos(70, 17)
+    print("           (   /   |  ----   |\   \  ")
+    pos(70, 18)
+    print("           | /   / /^\    /^\  \  _|  ")
+    pos(70, 19) 
+    print("            ~   | |   |  |   | | ~     ")
+    pos(70, 20)
+    print("                | |__O|__|O__| | ")
+    pos(70, 21)
+    print("              /~~      \/     ~~\  ")
+    pos(70, 22)
+    print("             /   (      |      )  \  ")
+    pos(70, 23)
+    print("       _--_  /,   \____/^\___/'   \  _--_  ")
+    pos(70, 24)
+    print("    /~    ~\ / -____-|_|_|-____-\ /~    ~\  ")
+    pos(70, 25)
+    print("   /________|___/~~~~\___/~~~~\ __|________\  ")
+    pos(70, 26)
+    print(Fore.YELLOW,"--~~~          ^ |     |   |     |  -     :  ~~~~~:~",Fore.GREEN,"-_  ___-----~~~~~~~~| ")
+    pos(70, 27)
+    print(Fore.YELLOW,"|             `^-^-^'   `^-^-^'                  :  ~\ ",Fore.GREEN,"/'   ____/--------| ",sep='')
+    pos(70, 28)
+    print(Fore.YELLOW,"|   --                                            ;   ",Fore.GREEN,"|/~~~------~~~~~~~~~| ",sep='')
+    pos(70, 29)
+    print(Fore.YELLOW,"(                                    :              :    ",Fore.GREEN,"|----------/--------| ",sep='')
+    pos(70, 30)
+    print(Fore.YELLOW,"(                     ,                           ;    .  ",Fore.GREEN,"|---\\--------------| ",sep='')
+    pos(70, 31)
+    print(Fore.YELLOW,"(     -                          .                  : : ",Fore.GREEN,"|______________-__| ",sep='')
+    pos(70, 32)
+    print(Fore.YELLOW,"|              ,                 ,                :   ",Fore.GREEN,"/'~----___________| ",sep='')
+    pos(70, 33)
+    print(Fore.YELLOW,"|_  \\\        ^                          ,, ;; ;; ;._-~ ")
+    pos(70, 34)
+    print(Fore.YELLOW,"|~~-----____________________________________----~~~ ")
+    pos(70, 35)
+    print(Fore.RED, Style.BRIGHT, "▬"*17*5, Style.RESET_ALL, end='', sep="")
+

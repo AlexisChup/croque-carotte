@@ -14,7 +14,7 @@ if __name__ == "__main__":
     while(isPlaying):
         isPlaying = playTurn(currentPlayer)
         currentPlayer = returnNextPlayer(currentPlayer)
-
+    
     # save the game
     setBackUp()
 

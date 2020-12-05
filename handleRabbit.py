@@ -17,6 +17,7 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
         board[positionRabbit] = Board.FREE_PLACE.value
         board[WIN_CELL] = name
         dictionnary[keyOfRabbit] = WIN_CELL
+        resetDicionnary()
 
         return IS_STOP_PLAYING
     
@@ -40,6 +41,8 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
     elif board[positionRabbit+valeur] == Board.HOLE.value:
         board[positionRabbit] = Board.FREE_PLACE.value
         dictionnary[keyOfRabbit] = Board.FALLEN.value
+
+        return isRabbitLeft()
 
     else:
         mooveRabbitOnBoard(keyOfRabbit, valeur+1, player)
@@ -106,6 +109,7 @@ def isRabbitLeft():
         if(isAllFallen):
             # is all rabbit of one's player is fallen, the winner is the other player
             displayWinner((index+1)%2)
+            resetDicionnary()
 
             return IS_STOP_PLAYING
 
@@ -114,3 +118,10 @@ def isRabbitLeft():
     return IS_CONTINUING_PLAYING
 
 
+def resetDicionnary():
+    for dictionnary in containerDictionnaries:
+        for key in dictionnary:
+            dictionnary[key] = Board.BEGIN.value
+            
+    DICO_PLAYER_NAME[PLAYER_1] = "JOUEUR 1"
+    DICO_PLAYER_NAME[PLAYER_2] = "JOUEUR 2"
