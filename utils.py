@@ -42,6 +42,11 @@ def handleInputPlayerActionMenu():
     pos(75, 26)
     actionMenu = input()
 
-    return True if (actionMenu == 'R' or actionMenu == 'r') else False
+    if(actionMenu == 'R' or actionMenu == 'r'):
+        return "displayRules"
+    elif(actionMenu == 'S' or actionMenu == 's'):
+        return "getBackup"
+    else:
+        return "startNewGame"
 
 

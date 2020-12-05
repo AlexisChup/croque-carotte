@@ -3,7 +3,7 @@ from globalVariables import *
 from Errors import PositionIncorrect
 from handlePlayers import initPlayer, returnNextPlayer
 
-from holes import insertRandomHole
+from holes import insertRandomHole, removeOlderHoles
 
 
 
@@ -51,13 +51,13 @@ def setBackUp():
 
 
 def getBackUp():
-    print("getbackup ")
     currentPlayer = initPlayer()
     containerDictionnariesKeys = [list(dictionnaryRabbitPLayer1.keys()), list(dictionnaryRabbitPLayer2.keys())]
     indexKeyDictionnary = 0
     isBackUpSucced = True
     isAllPositionRabbitAreGot = False
     listPositionOfHoles.clear()
+    removeOlderHoles()
     saveFile = openFile("r")
 
     if(saveFile != None):
@@ -110,8 +110,6 @@ def getBackUp():
                         listPositionOfHoles.append(int(listWordsInLine[0]))
                         
                     except PositionIncorrect:
-                        print(listWordsInLine[0], "isn't a correct position for a hole in the Board") 
-
                         isBackUpSucced = False
                         saveFile.close()
                         return isBackUpSucced

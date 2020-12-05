@@ -18,6 +18,7 @@ def insertRandomHole(randomPosition):
         removeOlderHoles()
         numberOfHoles = random.randint(1, 3)
         listPositionOfFuturFallenRabbit = []
+        listPositionOfHoles.clear()
 
         for hole in range(numberOfHoles):
             positionOfHole = returnRandomPositionOfHole()
@@ -30,7 +31,6 @@ def insertRandomHole(randomPosition):
     # backup
     else:
         for holePosition in listPositionOfHoles:
-            print(holePosition)
             board[holePosition] = Board.HOLE.value
 
         listPositionOfFuturFallenRabbit = []

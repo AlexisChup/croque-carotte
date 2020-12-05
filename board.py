@@ -19,11 +19,41 @@ def initBoard():
 def croqueCarotteMenu():
         clearConsole()
         displayMenu()
-        isRules = handleInputPlayerActionMenu()
+        actionPlayerInMenu = handleInputPlayerActionMenu()
         clearConsole()
-        if(isRules):
+
+        if(actionPlayerInMenu == "displayRules"):
             displayRules()
             croqueCarotteMenu()
+        elif(actionPlayerInMenu == "getBackup"):
+            isBackupSucced = getBackUp()
+
+            if(isBackupSucced):
+                print("Chargement de la sauvegarde réussite !")
+                insertRandomHole(False)
+                insertRabbitsInBoard()
+            else:
+                print("Chargement de la sauvegarde non réussite !")
+        else:
+            pass
+
+def insertRabbitsInBoard():
+    """
+    this function is called after getting backup
+    this will look into the dicitonnaries & place the rabbits
+    on the board
+    """
+    indexDictionnary = 0
+    containerRabbitBoardValue = [Board.RABBIT_PLAYER_1.value, Board.RABBIT_PLAYER_2.value]
+
+    for dictionnary in containerDictionnaries:
+        for position in dictionnary.values():
+            if(position != Board.FALLEN.value or position != Board.BEGIN.value):
+                board[position] = containerRabbitBoardValue[indexDictionnary]
+            
+        indexDictionnary += 1
+
+
 
 def playTurn(player):
         
