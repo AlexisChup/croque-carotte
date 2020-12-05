@@ -29,12 +29,6 @@ class Board(Enum):
 PLAYER_1 =      0
 PLAYER_2 =      1
 
-# Displayed names
-DICO_PLAYER_NAME = {
-    PLAYER_1: "TRISTAN",
-    PLAYER_2: "ZAZA"
-}
-
 # Meaning of all cards
 MOVING_1 =      1
 MOVING_2 =      2

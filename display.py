@@ -5,6 +5,13 @@ from colorama import Fore, Back, Style
 from globalConstants import *
 from globalVariables import *
 
+
+def chooseNameOfPlayer():
+    pos(15, 15)
+    DICO_PLAYER_NAME[PLAYER_1] = str(input('Entrez le nom du joueur 1 : '))
+    pos(15, 17)
+    DICO_PLAYER_NAME[PLAYER_2] = str(input('Entrez le nom du joueur 2 : '))
+
 def displayMenu():
     pos(75, 17)
     displayHoritonzaleLine()

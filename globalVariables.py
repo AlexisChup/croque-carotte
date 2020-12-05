@@ -17,6 +17,12 @@ dictionnaryRabbitPLayer2 = {
     "D2": Board.BEGIN.value 
 }
 
+# Displayed names
+DICO_PLAYER_NAME = {
+    PLAYER_1: "JOUEUR 1",
+    PLAYER_2: "JOUEUR 2"
+}
+
 # use to loop over the 2 dictionnary
 containerDictionnaries = [dictionnaryRabbitPLayer1, dictionnaryRabbitPLayer2]
 

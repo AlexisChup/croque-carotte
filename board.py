@@ -13,6 +13,7 @@ from holes import insertRandomHole
 
 from save import setBackUp, getBackUp
 
+
 def initBoard():
     insertRandomHole(True)
 
@@ -35,7 +36,7 @@ def croqueCarotteMenu():
             else:
                 print("Chargement de la sauvegarde non réussite !")
         else:
-            pass
+            chooseNameOfPlayer()
 
 def insertRabbitsInBoard():
     """
@@ -88,3 +89,5 @@ def playTurn(player):
         clearConsole()
 
     return isPlaying
+
+
