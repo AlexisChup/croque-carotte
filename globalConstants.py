@@ -13,11 +13,11 @@ IS_STOP_PLAYING =       False
 # Board's cells signification
 class Board(Enum):
     FALLEN =            -2
-    BEGIN =             auto()
-    FREE_PLACE =        auto()
-    RABBIT_PLAYER_1 =   auto()
-    RABBIT_PLAYER_2 =   auto()
-    HOLE =              auto()
+    BEGIN =             auto() # -1
+    FREE_PLACE =        auto() # 0
+    RABBIT_PLAYER_1 =   auto() # 1
+    RABBIT_PLAYER_2 =   auto() # 2
+    HOLE =              auto() # 3
 
     def getFirstElement():
         """
