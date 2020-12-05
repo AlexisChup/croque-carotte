@@ -37,7 +37,8 @@ T : Tristan
 - [X] Création du menu pour saisir les actions -> T
 - [X] Rajouter des commentaires -> T / A
 - [X] Cahier des charges de base -> T / A
-- [X] Cahier des charges extension : sauvegarde -> A 
+- [X] Cahier des charges extension : sauvegarde -> A
+- [X] Adapter l'effaçage de la console suivant le système d'exploitation
 
 - [ ] Cahier des charges extension : joueur sur son "propre écran" (voir PDF)
 - [ ] Cahier des charges extensions IA
