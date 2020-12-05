@@ -14,7 +14,7 @@ def insertRandomHole(randomPosition):
     If listPositionOfHoles is set, set holes in those positions
     """
     # random position
-    if(randomPosition == None):
+    if(randomPosition == True):
         removeOlderHoles()
         numberOfHoles = random.randint(1, 3)
         listPositionOfFuturFallenRabbit = []

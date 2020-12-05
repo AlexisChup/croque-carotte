@@ -109,7 +109,7 @@ def displayRules():
     pos(10, 15) 
     print("Le plus jeune joueur débute la partie en tirant une carte :") 
     pos(10, 16)
-    print("- Si la carte retournée correspond à avancé un lapin, le joueur avance le lapin de son choix du nombre de cases indiquées.") 
+    print("- Si la carte retournée correspond à avancer un lapin, le joueur avance le lapin de son choix du nombre de cases indiquées.") 
     pos(10, 17)
     print("- Si elle correspond à une carotte, alors les trous vont changer de positions, attention à vous lapin.")
     pos(10, 19)

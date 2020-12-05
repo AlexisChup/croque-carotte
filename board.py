@@ -38,8 +38,6 @@ def playTurn(player):
 
     if(isPlaying):
         # CARD
-        getBackUp()
-        insertRandomHole(False)
         displayBoard()
         currentCard = getCard()
         displayValueOfCard(currentCard)
