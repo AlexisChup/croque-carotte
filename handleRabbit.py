@@ -47,7 +47,9 @@ def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
         return isRabbitLeft()
 
     else:
-        mooveRabbitOnBoard(keyOfRabbit, valeur+1, player)
+        isPlaying = mooveRabbitOnBoard(keyOfRabbit, valeur+1, player)
+        return isPlaying
+
 
     return isRabbitLeft()
     
@@ -124,6 +126,6 @@ def resetDicionnary():
     for dictionnary in containerDictionnaries:
         for key in dictionnary:
             dictionnary[key] = Board.BEGIN.value
-            
+
     DICO_PLAYER_NAME[PLAYER_1] = "JOUEUR 1"
     DICO_PLAYER_NAME[PLAYER_2] = "JOUEUR 2"

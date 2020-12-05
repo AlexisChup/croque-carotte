@@ -108,9 +108,7 @@ def displayCaseNumer():
 
 def displayWinner(player):
     clearConsole()
-    rabbitEndGame()
-    pos(70, 40)
-    print(Fore.WHITE, DICO_PLAYER_NAME[player], "Gagne la partie !!!")
+    rabbitEndGame(player)
 
 def displayRules():
     pos(10, 10)
@@ -168,7 +166,7 @@ def pos(x,y):
     """
     print( "\x1b["+str(y)+";"+str(x)+"H",end="",sep="")
 
-def rabbitEndGame():
+def rabbitEndGame(player):
     pos(70, 12)
     print(Fore.RED, Style.BRIGHT, "▬"*17*5, Style.RESET_ALL, end='', sep="")
     pos(70, 13)
@@ -182,7 +180,7 @@ def rabbitEndGame():
     pos(70, 17)
     print("           (   /   |  ----   |\   \  ")
     pos(70, 18)
-    print("           | /   / /^\    /^\  \  _|  ")
+    print("           | /   / /^\    /^\  \  _|              ",Fore.WHITE, DICO_PLAYER_NAME[player]," Gagne la partie !!!", sep = '')
     pos(70, 19) 
     print("            ~   | |   |  |   | | ~     ")
     pos(70, 20)
@@ -216,5 +214,5 @@ def rabbitEndGame():
     pos(70, 34)
     print(Fore.YELLOW,"|~~-----____________________________________----~~~ ")
     pos(70, 35)
-    print(Fore.RED, Style.BRIGHT, "▬"*17*5, Style.RESET_ALL, end='', sep="")
+    print(Fore.RED, Style.BRIGHT, "▬"*17*5, Style.RESET_ALL, sep="")
 
