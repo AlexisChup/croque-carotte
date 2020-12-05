@@ -21,6 +21,9 @@ def openFile(modeOpening):
         return saveFile
 
 def setBackUp():
+    """
+    insert in 'save.txt' the import values for backup
+    """
     currentPlayer = initPlayer()
     containerDictionnariesKeys = [list(dictionnaryRabbitPLayer1.keys()), list(dictionnaryRabbitPLayer2.keys())]
     indexKeyDictionnary = 0

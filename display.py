@@ -69,6 +69,9 @@ def displayHorizontalLineBoard():
     print("")
 
 def displayBoardCell():
+    """
+    display the board in the console
+    """
     for cell in range(NUMBER_OF_CELL-1):
         if board[cell] == Board.HOLE.value:
             printOneCell(Fore.WHITE, "████")
@@ -91,6 +94,9 @@ def displayBoardCell():
     print("")
 
 def printOneCell(color, content):
+    """
+    display one cell of the board in the console
+    """
     print(color, content, Fore.RED, Style.BRIGHT, "│", Style.RESET_ALL, end='', sep="")
 
 def displayCaseNumer():
@@ -153,4 +159,7 @@ def displayRules():
     input("appuyer sur une touche pour passer")
 
 def pos(x,y):
-   print( "\x1b["+str(y)+";"+str(x)+"H",end="",sep="")
+    """
+    place the cursor in the console according to (x, y) coordinates
+    """
+    print( "\x1b["+str(y)+";"+str(x)+"H",end="",sep="")

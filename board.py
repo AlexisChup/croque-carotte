@@ -20,26 +20,29 @@ def initBoard():
     insertRandomHole(True)
 
 def croqueCarotteMenu():
-        clearConsole()
-        displayMenu()
-        actionPlayerInMenu = handleInputPlayerActionMenu()
-        clearConsole()
+    """
+    propose displaying rules / resume a backup game / start a new game
+    """
+    clearConsole()
+    displayMenu()
+    actionPlayerInMenu = handleInputPlayerActionMenu()
+    clearConsole()
 
-        if(actionPlayerInMenu == "displayRules"):
-            displayRules()
-            croqueCarotteMenu()
-        elif(actionPlayerInMenu == "getBackup"):
-            isBackupSucced = getBackUp()
+    if(actionPlayerInMenu == "displayRules"):
+        displayRules()
+        croqueCarotteMenu()
+    elif(actionPlayerInMenu == "getBackup"):
+        isBackupSucced = getBackUp()
 
-            if(isBackupSucced):
-                print("Chargement de la sauvegarde réussite !")
-                insertRandomHole(False)
-                insertRabbitsInBoard()
-            else:
-                print("Chargement de la sauvegarde non réussite !")
+        if(isBackupSucced):
+            print("Chargement de la sauvegarde réussite !")
+            insertRandomHole(False)
+            insertRabbitsInBoard()
         else:
-            chooseNameOfPlayer()
-            clearConsole()
+            print("Chargement de la sauvegarde non réussite !")
+    else:
+        chooseNameOfPlayer()
+        clearConsole()
 
 def insertRabbitsInBoard():
     """
@@ -66,7 +69,7 @@ def playTurn(player):
 
     # IS PLAYING AGAIN
     displayPlayerAction()
-    isPlaying = handleInputPlayerAction()
+    isPlaying = handleInputIsPlaying()
     # clearConsole()
 
     if(isPlaying):
@@ -79,6 +82,7 @@ def playTurn(player):
         if(currentCard != MOVING_CARROT):
             keyOfRabbit = chooseRabbitToMoove(player)
             isPlaying = mooveRabbitOnBoard(keyOfRabbit, currentCard, player)
+            
         # MOOVE CARROT
         else:
             listPositionOfFuturFallenRabbit = insertRandomHole(True)

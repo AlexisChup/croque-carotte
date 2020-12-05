@@ -2,6 +2,10 @@ from Errors import ValueNotInInterval
 from display import pos
 
 def handleInputRabbitNumero(numberOfRabbitAlive):
+    """
+    display only rabbit that they aren't fallen.
+    if the player's input isn't correct, the program will display an error
+    """
     isInputCorrect = False
     inputNumeroOfRabbit = None
 
@@ -32,7 +36,7 @@ def handleInputRabbitNumero(numberOfRabbitAlive):
 
     return (inputNumeroOfRabbit - 1) # -1 because array start at 0
 
-def handleInputPlayerAction():
+def handleInputIsPlaying():
     pos(9, 11)
     playerAction = input()
 
