@@ -24,7 +24,7 @@ def displayMenu():
 def displayCurrentPlayer(player):
     colorDisplayed = Fore.GREEN if player == PLAYER_1 else Fore.BLUE #each player has his own color
     pos(5, 5)
-    print(Style.BRIGHT, colorDisplayed, DICO_PLAYER_NAME[player], Style.RESET_ALL, " À toi de jouer !")
+    print(Style.BRIGHT, colorDisplayed, "\t"+DICO_PLAYER_NAME[player], Style.RESET_ALL, " À toi de jouer !")
 
 def clearConsole():
     """
@@ -128,15 +128,27 @@ def displayRules():
     print("- Chaque joueur saute la ou les cases occupées. Elles ne sont pas comptabilisées dans le déplacement.")
     pos(10, 27)
     print("- Un trou équivaut à une case. Le lapin ne tombe dedans que s’il s’agit de sa destination finale. Un trou peut aussi s’ouvrir sous les pieds d’un lapin lorsque la carotte est tournée.")
-    pos(10, 28)
-    print("- Si l’un des joueurs voit tous ses lapins tomber dans un trou, il sort du jeu et devra attendre la prochaine partie pour retenter sa chance.")
-    pos(10, 30)
+    pos(10, 29)
     print("Comment gagner une partie de croque carotte ?")
+    pos(10, 31)
+    print("Le joueur qui remporte la partie de croque-carotte est celui qui a amené l’un de ses lapins au niveau de la carotte ou que tous les lapins d'un joueur soient tombés dans un trou.")
     pos(10, 32)
-    print("Le joueur qui remporte la partie de croque carotte est celui qui a amené l’un de ses lapins au niveau de la carotte ou que tous les lapins d'un joueur soient tombés dans un trou.")
-    pos(10, 33)
-    print("cela correpond à la dernière case du plteau mais attention il ne suffit pas de dépasser cette case... Il faut arriver pile dessus ou vous reculerez.")
+    print("cela correpond à la dernière case du plateau mais attention il ne suffit pas de dépasser cette case... Il faut arriver pile dessus ou vous reculerez.")
     pos(10, 35)
+    print("Voivi le code couleur du jeu :")
+    pos(10, 37)
+    print(Fore.WHITE,"███", end =" ") 
+    print(Fore.WHITE," : un trou")
+    pos(10, 39)
+    print(Fore.YELLOW,"███", end =" ") 
+    print(Fore.WHITE," : la carotte")
+    pos(10, 41)
+    print(Fore.GREEN,"█"+"X1"+"█", end =" ") 
+    print(Fore.WHITE,": lapin du joueur 1")
+    pos(10, 43)
+    print(Fore.BLUE,"█"+"X2"+"█", end =" ") 
+    print(Fore.WHITE,": lapin du joueur 2")
+    pos(10, 45)
     input("appuyer sur une touche pour passer")
 
 def pos(x,y):
