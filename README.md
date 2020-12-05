@@ -12,20 +12,23 @@
 
 ### Tasks
 
+A : Alexis
+T : Tristan
+
 TODO:
 - [X] Deck de cartes -> A
 - [X] Déplacement des lapins -> T
 - [X] Créer les trous dès le début -> A
-- [X] Afficher les numéros des cases en dessous -> A
+- [X] Afficher les numéros des cases en dessous du plateau -> A
 - [X] Détection de fin de partie -> A
 - [X] Bel affichage de fin de partie -> T
 - [X] Afficher le nom des lapins -> T
-- [X] insertRandomHole -> if rabbit -> le faire tomber -> A
+- [X] À la suite d'insertions de trous, faire tomber les lapins qui se trouvaient sur ces trous -> A
 - [X] Gestions des erreurs dans les inputs (try/catch) -> A
 - [X] Gérer le cas où tous les lapins d'un joueur sont morts -> A
 - [X] Meilleur affichage des noms des lapins (couleurs) -> A
-- [X] Reculer les lapins quand ils touchent la carotte  -> T
-- [X] Ajouter une enum pour les différentes cases de la board -> A
+- [X] Reculer les lapins quand ils dépassent la case finale -> T
+- [X] Ajouter une énumération pour les différentes cases du plateau -> A
 - [X] Création du menu pour saisir les actions -> T
 - [X] Rajouter des commentaires -> T / A
 - [X] Cahier des charges de base -> T / A
