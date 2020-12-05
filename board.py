@@ -48,7 +48,7 @@ def insertRabbitsInBoard():
 
     for dictionnary in containerDictionnaries:
         for position in dictionnary.values():
-            if(position != Board.FALLEN.value and position != Board.BEGIN.value):
+            if(position != Board.FALLEN.value and position != Board.BEGIN.value): # we place on the board only if the position is valid
                 board[position] = containerRabbitBoardValues[indexDictionnary]
             
         indexDictionnary += 1
