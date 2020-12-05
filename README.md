@@ -8,11 +8,17 @@
 <br>
 `cd croque-carotte`
 <br>
+
+#### Windows Users
+`py main.py`
+
+#### Others
 `python3 main.py`
 
 ### Tasks
 
 A : Alexis
+<br>
 T : Tristan
 
 TODO:

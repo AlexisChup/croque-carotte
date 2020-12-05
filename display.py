@@ -1,4 +1,5 @@
 import os
+import platform
 
 from colorama import Fore, Back, Style
 
@@ -28,11 +29,10 @@ def displayCurrentPlayer(player):
     print(Style.BRIGHT, colorDisplayed, "\t"+DICO_PLAYER_NAME[player], Style.RESET_ALL, " À toi de jouer !")
 
 def clearConsole():
-    """
-    Efface tout le contenu de la console
-    pour un affichage plus clair
-    """
-    os.system("clear")
+    if(platform.system() == "Windows"):
+        os.system("cls")
+    else:
+        os.system("clear")
 
 def displayHoritonzaleLine():
     print("".center(60, "▬"))
