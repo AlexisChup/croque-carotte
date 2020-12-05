@@ -31,7 +31,7 @@ def setBackUp():
     if(saveFile != None):
         # insert Rabbit position
         for dictionnary in containerDictionnaries:
-            saveFile.write("Rabbit player" + str(indexKeyDictionnary+1) + ":\n")
+            saveFile.write(DICO_PLAYER_NAME[indexKeyDictionnary] + "\n")
             for key, value in dictionnary.items():
                 saveFile.write(key + ":" + " " + str(value) + "\n")
 
@@ -59,6 +59,7 @@ def getBackUp():
     listPositionOfHoles.clear()
     removeOlderHoles()
     saveFile = openFile("r")
+    indexLine = 1
 
     if(saveFile != None):
         for line in saveFile:
@@ -66,7 +67,26 @@ def getBackUp():
 
             # rabbit position
             if(isAllPositionRabbitAreGot == False):
-                if(len(listWordsInLine) >= 2 and listWordsInLine[0] != "Rabbit"):
+                # breakline
+                if(indexLine == 6 or indexLine == 12):
+                    # We switch between player
+                    currentPlayer = returnNextPlayer(currentPlayer)
+                    if(currentPlayer == PLAYER_1): # indicate that we have gotten all rabbit position
+                        isAllPositionRabbitAreGot = True
+
+                    indexKeyDictionnary = 0
+                    
+                elif(indexLine == 1 or indexLine == 7): #it's the name of the player
+                    """
+                    listWordsInLine are like:
+                        "JOUEUR 1"
+                    """
+                    namePlayer = ""
+                    for word in listWordsInLine:
+                        namePlayer += (" " +word)
+
+                    DICO_PLAYER_NAME[currentPlayer] = namePlayer
+                else:
                     """
                     listWordsInLine are like:
                         ["A1:", 8]
@@ -87,20 +107,12 @@ def getBackUp():
                         saveFile.close()
                         return isBackUpSucced
                         
-                # breakline
-                elif(len(listWordsInLine) == 0):
-                    # We switch between player
-                    currentPlayer = returnNextPlayer(currentPlayer)
-                    if(currentPlayer == PLAYER_1): # indicate that we have gotten all rabbit position
-                        isAllPositionRabbitAreGot = True
 
-                    indexKeyDictionnary = 0
-                    pass
 
             # holes position
             else:
                 # breakline
-                if(len(listWordsInLine) > 0 and listWordsInLine[0] != "Holes:"):
+                if(indexLine != 13):
                     try:
                         holePosition = int(listWordsInLine[0])
 
@@ -113,6 +125,8 @@ def getBackUp():
                         isBackUpSucced = False
                         saveFile.close()
                         return isBackUpSucced
+
+            indexLine += 1
         
         saveFile.close()
 

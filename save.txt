@@ -1,15 +1,16 @@
-Rabbit player1:
-A1: 8
+ ze rert rtyui
+A1: 9
 B1: -1
 C1: -1
 D1: -1
 
-Rabbit player2:
+ JOUEUR_2
 A2: -2
-B2: 1
+B2: 3
 C2: -1
 D2: -1
 
 Holes:
-7
-4
+21
+18
+17
