@@ -21,7 +21,6 @@ A : Alexis
 <br>
 T : Tristan
 
-TODO:
 - [X] Deck de cartes -> A
 - [X] Déplacement des lapins -> T
 - [X] Créer les trous dès le début -> A
