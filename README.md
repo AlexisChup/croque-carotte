@@ -5,7 +5,9 @@
 
 ### Installation & Launch
 `git clone https://github.com/AlexisChup/croque-carotte.git`
+<br>
 `cd croque-carotte`
+<br>
 `python3 main.py`
 
 ### Tasks
