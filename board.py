@@ -44,12 +44,12 @@ def insertRabbitsInBoard():
     on the board
     """
     indexDictionnary = 0
-    containerRabbitBoardValue = [Board.RABBIT_PLAYER_1.value, Board.RABBIT_PLAYER_2.value]
+    containerRabbitBoardValues = [Board.RABBIT_PLAYER_1.value, Board.RABBIT_PLAYER_2.value]
 
     for dictionnary in containerDictionnaries:
         for position in dictionnary.values():
-            if(position != Board.FALLEN.value or position != Board.BEGIN.value):
-                board[position] = containerRabbitBoardValue[indexDictionnary]
+            if(position != Board.FALLEN.value and position != Board.BEGIN.value):
+                board[position] = containerRabbitBoardValues[indexDictionnary]
             
         indexDictionnary += 1
 

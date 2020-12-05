@@ -41,7 +41,7 @@ def displayPlayerAction():
     Either player continuing or quit
     """    
     print("\tEntrez un caractère : \n")
-    print("\t[q] : Quitter")
+    print("\t[q] : Quitter et sauvegarder")
     print("\tAutre : Tirer une carte")
     # print("\tR : afficher les règles du jeu")
 
@@ -135,7 +135,7 @@ def displayRules():
     pos(10, 32)
     print("cela correpond à la dernière case du plateau mais attention il ne suffit pas de dépasser cette case... Il faut arriver pile dessus ou vous reculerez.")
     pos(10, 35)
-    print("Voivi le code couleur du jeu :")
+    print("Voici le code couleur du jeu :")
     pos(10, 37)
     print(Fore.WHITE,"███", end =" ") 
     print(Fore.WHITE," : un trou")
