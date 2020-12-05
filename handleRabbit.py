@@ -6,12 +6,14 @@ from display import displayWinner, pos
 from utils import handleInputRabbitNumero
 
 def mooveRabbitOnBoard(keyOfRabbit, valeur, player):
+    """
+    update dictionnaries & board array according to the displacement of a rabbit
+    """
     dictionnary = chooseGoodDictionnary(player)
     name = findNameRabbit(player)
 
     positionRabbit = dictionnary[keyOfRabbit]
 
-    # À changer par la suite
     if(positionRabbit+valeur == WIN_CELL):
         displayWinner(player)
         board[positionRabbit] = Board.FREE_PLACE.value

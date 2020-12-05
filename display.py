@@ -1,4 +1,5 @@
 import os
+import platform
 
 from colorama import Fore, Back, Style
 
@@ -29,11 +30,10 @@ def displayCurrentPlayer(player):
     print(Style.BRIGHT, colorDisplayed, "\t"+DICO_PLAYER_NAME[player], Style.RESET_ALL, " À toi de jouer !")
 
 def clearConsole():
-    """
-    Efface tout le contenu de la console
-    pour un affichage plus clair
-    """
-    os.system("clear")
+    if(platform.system() == "Windows"):
+        os.system("cls")
+    else:
+        os.system("clear")
 
 def displayHoritonzaleLine():
     print("".center(60, "▬"))
@@ -70,6 +70,9 @@ def displayHorizontalLineBoard():
     print("")
 
 def displayBoardCell():
+    """
+    display the board in the console
+    """
     for cell in range(NUMBER_OF_CELL-1):
         if board[cell] == Board.HOLE.value:
             printOneCell(Fore.WHITE, "████")
@@ -92,6 +95,9 @@ def displayBoardCell():
     print("")
 
 def printOneCell(color, content):
+    """
+    display one cell of the board in the console
+    """
     print(color, content, Fore.RED, Style.BRIGHT, "│", Style.RESET_ALL, end='', sep="")
 
 def displayCaseNumer():
@@ -157,7 +163,10 @@ def displayRules():
     input("appuyer sur une touche pour passer")
 
 def pos(x,y):
-   print( "\x1b["+str(y)+";"+str(x)+"H",end="",sep="")
+    """
+    place the cursor in the console according to (x, y) coordinates
+    """
+    print( "\x1b["+str(y)+";"+str(x)+"H",end="",sep="")
 
 def rabbitEndGame():
     pos(70, 12)
