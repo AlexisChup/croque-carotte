@@ -40,8 +40,8 @@ def handleInputPlayerAction():
 
 def handleInputPlayerActionMenu():
     pos(75, 26)
-    ActionMenu = input()
+    actionMenu = input()
 
-    return True if (ActionMenu == 'R' or ActionMenu == 'r') else False
+    return True if (actionMenu == 'R' or actionMenu == 'r') else False
 
 

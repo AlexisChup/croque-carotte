@@ -1,14 +1,15 @@
-from board import initBoard, playTurn, beforePlayTurn
+from board import initBoard, playTurn, croqueCarotteMenu
 from handlePlayers import initPlayer, returnNextPlayer
-import os
+from display import clearConsole
 
 if __name__ == "__main__":
-    os.system('clear')
+    clearConsole()
     currentPlayer = initPlayer()
     isPlaying = True
 
     initBoard()
-    beforePlayTurn()
+    croqueCarotteMenu() # display rules / resume backup game / start new game 
+
     while(isPlaying):
         isPlaying = playTurn(currentPlayer)
         currentPlayer = returnNextPlayer(currentPlayer)

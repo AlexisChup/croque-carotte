@@ -11,20 +11,19 @@ from utils import *
 from cards import getCard
 from holes import insertRandomHole
 
-import os
 from save import setBackUp, getBackUp
 
 def initBoard():
     insertRandomHole(True)
 
-def beforePlayTurn():
-        os.system('clear')
+def croqueCarotteMenu():
+        clearConsole()
         displayMenu()
         isRules = handleInputPlayerActionMenu()
-        os.system('clear')
+        clearConsole()
         if(isRules):
             displayRules()
-            beforePlayTurn()
+            croqueCarotteMenu()
 
 def playTurn(player):
         
@@ -56,6 +55,6 @@ def playTurn(player):
         displayBoard()
         pos(120, 40)
         input("appuyer sur une touche quand vous avez fini votre tour")
-        os.system('clear')
+        clearConsole()
 
     return isPlaying

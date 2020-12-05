@@ -15,9 +15,11 @@ def displayMenu():
     pos(75, 21)
     print("Entrez un caractère : \n")
     pos(75, 23)
-    print("R : afficher les règles du jeu")
+    print("[r] : afficher les règles du jeu")
     pos(75, 24)
-    print("Autre : commencer une partie")
+    print("[s] : reprendre la partie sauvegardé")
+    pos(75, 25)
+    print("Autre : commencer une nouvelle partie")
 
 def displayCurrentPlayer(player):
     colorDisplayed = Fore.GREEN if player == PLAYER_1 else Fore.BLUE #each player has his own color
@@ -39,7 +41,7 @@ def displayPlayerAction():
     Either player continuing or quit
     """    
     print("\tEntrez un caractère : \n")
-    print("\tq : Quitter")
+    print("\t[q] : Quitter")
     print("\tAutre : Tirer une carte")
     # print("\tR : afficher les règles du jeu")
 
@@ -123,7 +125,7 @@ def displayRules():
     pos(10, 25)
     print("- Un seul lapin par case doit être présent.")
     pos(10, 26)
-    print("- Chaque joueur saute la ou les cases occupées. Elle ne sont pas comptabilisées dans le déplacement.")
+    print("- Chaque joueur saute la ou les cases occupées. Elles ne sont pas comptabilisées dans le déplacement.")
     pos(10, 27)
     print("- Un trou équivaut à une case. Le lapin ne tombe dedans que s’il s’agit de sa destination finale. Un trou peut aussi s’ouvrir sous les pieds d’un lapin lorsque la carotte est tournée.")
     pos(10, 28)
@@ -131,7 +133,7 @@ def displayRules():
     pos(10, 30)
     print("Comment gagner une partie de croque carotte ?")
     pos(10, 32)
-    print("Le joueur qui remporte la partie de croque carotte est celui qui a amené l’un de ses lapins au niveau de la carotte.")
+    print("Le joueur qui remporte la partie de croque carotte est celui qui a amené l’un de ses lapins au niveau de la carotte ou que tous les lapins d'un joueur soient tombés dans un trou.")
     pos(10, 33)
     print("cela correpond à la dernière case du plteau mais attention il ne suffit pas de dépasser cette case... Il faut arriver pile dessus ou vous reculerez.")
     pos(10, 35)
